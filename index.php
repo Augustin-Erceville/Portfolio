@@ -66,7 +66,7 @@
         <div class="col-3">
             <div id="list-example" class="list-group">
                 <a class="list-group-item list-group-item-action text-center" href="#list-item-1">BTS SIO</a>
-                <a class="list-group-item list-group-item-action text-center" href="#list-item-2">Item 2</a>
+                <a class="list-group-item list-group-item-action text-center" href="#list-item-2">Compétances</a>
                 <a class="list-group-item list-group-item-action text-center" href="#list-item-3">Item 3</a>
                 <a class="list-group-item list-group-item-action text-center" href="#list-item-4">Item 4</a>
             </div>
@@ -82,8 +82,8 @@
                     <div class="col border border-dark rounded py-3 bg-danger bg-opacity-25 border-2 mx-3" style="text-align: justify">
                         <h3 class="text-center"><abbr title="Brevet de Technicien Supérieur"><button type="button" class="btn btn-outline-danger btn-lg px-6">SISR</button></abbr></h3>
                         <hr>
-                        <p>L’option <b>S</b>olution d’<b>I</b>nfrastructure, <b>S</b>ystèmes et <b>R</b>éseaux forme des professionnels des réseaux et équipements informatiques (installation, maintenance, sécurité).</p>
-                        Les techniciens supérieurs en informatique option <b>SISR</b>, peuvent accéder aux métiers de :
+                        <p>L’option <b>S</b>olution d’<b>I</b>nfrastructure, <b>S</b>ystèmes et <b>R</b>éseaux forme des professionnels des réseaux et des équipements informatiques (installation, maintenance, sécurité).</p>
+                        Les techniciens supérieurs en informatique, option <b>SISR</b>, peuvent accéder aux métiers de :
                         <li>&nbsp;Administrateur systèmes et réseaux</li>
                         <li>&nbsp;Informaticien support et déploiement</li>
                         <li>&nbsp;Pilote d’exploitation</li>
@@ -96,7 +96,7 @@
                         <h3 class="text-center"><abbr title="Brevet de Technicien Supérieur"><button type="button" class="btn btn-outline-success btn-lg px-6">SLAM</button></abbr></h3>
                         <hr>
                         <p>L’option <b>S</b>olutions <b>L</b>ogicielles et <b>A</b>pplications <b>M</b>étiers forme des spécialistes des logiciels (rédaction d’un cahier des charges, formulation des besoins et spécifications, développement, intégration au sein de la société).</p>
-                        Les techniciens supérieurs en informatique option <b>SLAM</b>, sont préparés aux métiers de :
+                        Les techniciens supérieurs en informatique, option <b>SLAM</b>, sont préparés aux métiers de :
                         <li>&nbsp;Développeur d’applications informatiques</li>
                         <li>&nbsp;Développeur informatique</li>
                         <li>&nbsp;Analyste d’applications ou d’études</li>
@@ -107,8 +107,129 @@
                         <li>&nbsp;Technicien d’études informatiques</li>
                     </div>
                 </div>
-                <h4 id="list-item-2">Item 2</h4>
-                <p class="fs-5">...</p>
+                <h1 id="list-item-2" style="text-align: center">Mes Compétances</h1>
+                <p class="fs-5">
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Compétances Réseaux
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <li>Apache</li>
+                                <li>Debian</li>
+                                <li>Windows (droit NTFS)</li>
+                                <li>HyperV</li>
+                                <li>Virtualbox</li>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Langages
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <li>PHP</li>
+                                <li>JAVA</li>
+                                <li>HTML5</li>
+                                <li>CSS3</li>
+                                <li>JavaScript, </li>
+                                <li>Python</li>
+                                <li>SQL</li>
+                                <li>MariaDB</li>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Framework
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <li>Jquery</li>
+                                <li>Bootstrap</li>
+                                <li>JAVAFX</li>
+                                <li>Symfony</li>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                Integrated Development Environment
+                            </button>
+                        </h2>
+                        <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                Suite Jetbrains
+                                <li>PHPStorm</li>
+                                <li>ItelliJ IDEA</li>
+                                <li>PyCharm</li>
+                                IDLE
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                Content Management System
+                            </button>
+                        </h2>
+                        <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <li>WordPress</li>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                Gestion de version
+                            </button>
+                        </h2>
+                        <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <li>GIT</li>
+                                <li>Github</li>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                                Outil bureautique
+                            </button>
+                        </h2>
+                        <div id="collapseSeven" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                Suite Office
+                                <li>Microsoft Word</li>
+                                <li>Microsoft Excel</li>
+                                <li>Microsoft Power Point</li>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                                Gestion de tickets
+                            </button>
+                        </h2>
+                        <div id="collapseEight" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <li><b>GLPI</b> (Gestionnaire Libre de Parc Informatique)</li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </p>
                 <h4 id="list-item-3">Item 3</h4>
                 <p class="fs-5">...</p>
                 <h4 id="list-item-4">Item 4</h4>
