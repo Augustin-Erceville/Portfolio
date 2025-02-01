@@ -2,7 +2,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-3">
-            <div class="card my-3" style="width: 24rem;">
+            <div class="card my-3" style="width: 100%;">
                 <img src="A_Erceville.png" class="rounded shadow mx-3 my-3" alt="Augustin d'Erceville">
                 <div class="card-body">
                     <h5 class="card-title">Augustin d'ERCEVILLE</h5>
@@ -46,7 +46,7 @@
             </div>
         </div>
         <div class="col my-3 lh-base">
-            <h1>Présentation</h1>
+            <h1 class="text-center">Présentation</h1>
             <p class="fs-5">
                 Bonjour, bienvenue sur mon portfolio,<br>
                 Avant de découvrir mon parcours, mes compétences et mes expériences professionnel, je vais avant tout me présenter.</p>
@@ -57,8 +57,63 @@
             </p>
             <p class="fs-5">
                 Actuellement en première année de BTS, je me suis dirigé vers la filière SIO et plus spécialement vers l'option SLAM.<br>
-                Mais je pourrais vous expliquer en quoi consistent les différences entre cette option et les autres.
+                Mais je vous expliquerai en quoi consistent les différences entre cette option et les autres plus tard.
             </p>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-3">
+            <div id="list-example" class="list-group">
+                <a class="list-group-item list-group-item-action text-center" href="#list-item-1">BTS SIO</a>
+                <a class="list-group-item list-group-item-action text-center" href="#list-item-2">Item 2</a>
+                <a class="list-group-item list-group-item-action text-center" href="#list-item-3">Item 3</a>
+                <a class="list-group-item list-group-item-action text-center" href="#list-item-4">Item 4</a>
+            </div>
+        </div>
+        <div class="col-8">
+            <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
+                <h1 id="list-item-1" style="text-align: center">Qu'es-ce que le BTS SIO ?</h1>
+                <p class="fs-5">
+                    Le  <abbr title="Brevet de Technicien Supérieur"><button type="button" class="btn btn-outline-secondary btn-sm px-3">BTS</button></abbr> <abbr title="Services Informatiques aux Organisations"><button type="button" class="btn btn-outline-secondary btn-sm px-3">SIO</button></abbr> est une formation en deux ans qui prépare les étudiants aux métiers de l'informatique, notamment dans le développement d'applications et l'administration des systèmes et réseaux.<br>
+                    Ce diplôme s'adresse aux passionnés d'informatique souhaitant acquérir des compétences techniques et professionnelles pour intégrer rapidement le marché du travail ou poursuivre leurs études dans le domaine du numérique.
+                </p>
+                <div class="row my-3">
+                    <div class="col border border-dark rounded py-3 bg-danger bg-opacity-25 border-2 mx-3" style="text-align: justify">
+                        <h3 class="text-center"><abbr title="Brevet de Technicien Supérieur"><button type="button" class="btn btn-outline-danger btn-lg px-6">SISR</button></abbr></h3>
+                        <hr>
+                        <p>L’option <b>S</b>olution d’<b>I</b>nfrastructure, <b>S</b>ystèmes et <b>R</b>éseaux forme des professionnels des réseaux et équipements informatiques (installation, maintenance, sécurité).</p>
+                        Les techniciens supérieurs en informatique option <b>SISR</b>, peuvent accéder aux métiers de :
+                        <li>&nbsp;Administrateur systèmes et réseaux</li>
+                        <li>&nbsp;Informaticien support et déploiement</li>
+                        <li>&nbsp;Pilote d’exploitation</li>
+                        <li>&nbsp;Support systèmes et réseaux</li>
+                        <li>&nbsp;Technicien d’infrastructure</li>
+                        <li>&nbsp;Technicien de production</li>
+                        <li>&nbsp;Technicien micro et réseaux</li>
+                    </div>
+                    <div class="col border border-dark rounded py-3 bg-success bg-opacity-25 border-2 mx-3" style="text-align: justify">
+                        <h3 class="text-center"><abbr title="Brevet de Technicien Supérieur"><button type="button" class="btn btn-outline-success btn-lg px-6">SLAM</button></abbr></h3>
+                        <hr>
+                        <p>L’option <b>S</b>olutions <b>L</b>ogicielles et <b>A</b>pplications <b>M</b>étiers forme des spécialistes des logiciels (rédaction d’un cahier des charges, formulation des besoins et spécifications, développement, intégration au sein de la société).</p>
+                        Les techniciens supérieurs en informatique option <b>SLAM</b>, sont préparés aux métiers de :
+                        <li>&nbsp;Développeur d’applications informatiques</li>
+                        <li>&nbsp;Développeur informatique</li>
+                        <li>&nbsp;Analyste d’applications ou d’études</li>
+                        <li>&nbsp;Analyste programmeur</li>
+                        <li>&nbsp;Programmeur analyste</li>
+                        <li>&nbsp;Programmeur d’applications</li>
+                        <li>&nbsp;Responsable des services applicatifs</li>
+                        <li>&nbsp;Technicien d’études informatiques</li>
+                    </div>
+                </div>
+                <h4 id="list-item-2">Item 2</h4>
+                <p class="fs-5">...</p>
+                <h4 id="list-item-3">Item 3</h4>
+                <p class="fs-5">...</p>
+                <h4 id="list-item-4">Item 4</h4>
+                <p class="fs-5">...</p>
+            </div>
         </div>
     </div>
 </div>
