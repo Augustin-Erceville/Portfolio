@@ -11,7 +11,7 @@
     </style>
 </head>
 <body style="font-family: Comfortaa;">
-<header class="navbar bg-dark sticky-md-top">
+<header class="navbar text-bg-dark">
     <div class="container-fluid">
         <a class="navbar-brand text-white fs-3 my-2" href="index.php">
             <img src="MitriLogo.png" alt="Logo" width="32" height="32" class="d-inline-block align-text-top">

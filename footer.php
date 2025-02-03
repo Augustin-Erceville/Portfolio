@@ -1,4 +1,4 @@
-    <footer class="d-flex flex-wrap justify-content-between align-items-center py-4 px-4 border-top fixed-bottom bg-dark" data-bs-theme="dark">
+    <footer class="d-flex flex-wrap justify-content-between align-items-center p-4 border-top text-bg-dark" data-bs-theme="dark">
         <div class="col-md-4 d-flex align-items-center">
             <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
                 <img src="MitriLogo.png" height="32px">
