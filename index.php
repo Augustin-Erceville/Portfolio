@@ -2,10 +2,10 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-3">
-            <div class="card my-3" style="width: 100%;">
+            <div class="card my-3 text-bg-dark" style="width: 100%;">
                 <img src="A_Erceville.png" class="rounded shadow mx-3 my-3" alt="Augustin d'Erceville">
                 <div class="card-body">
-                    <h5 class="card-title">Augustin d'ERCEVILLE</h5>
+                    <h5 class="card-title text-uppercase text-center fs-3">Augustin d'ERCEVILLE</h5>
 
                     <p class="card-text">
                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-phone" viewBox="0 0 16 16">
@@ -45,7 +45,7 @@
                 </div>
             </div>
         </div>
-        <div class="col my-3 lh-base">
+        <div class="col m-3 lh-base text-bg-dark rounded">
             <h1 class="text-center">Présentation</h1>
             <p class="fs-5">
                 Bonjour, bienvenue sur mon portfolio,<br>
@@ -65,21 +65,21 @@
     <div class="row">
         <div class="col-3">
             <div id="list-example" class="list-group">
-                <a class="list-group-item list-group-item-action text-start" href="#list-item-1">BTS SIO</a>
-                <a class="list-group-item list-group-item-action text-start" href="#list-item-2">Compétences</a>
-                <a class="list-group-item list-group-item-action text-start" href="#list-item-3">Expériences</a>
-                <a class="list-group-item list-group-item-action text-start" href="#list-item-4">Formations</a>
+                <a class="list-group-item list-group-item-action text-start text-bg-dark" href="#BTS_SIO">BTS SIO</a>
+                <a class="list-group-item list-group-item-action text-start text-bg-dark" href="#Competances">Compétences</a>
+                <a class="list-group-item list-group-item-action text-start text-bg-dark" href="#Experiences">Expériences</a>
+                <a class="list-group-item list-group-item-action text-start text-bg-dark" href="#Certificats">Certificats</a>
             </div>
         </div>
-        <div class="col-8">
+        <div class="col">
             <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
-                <h1 id="list-item-1" style="text-align: center">Qu'es-ce que le BTS SIO ?</h1>
-                <p class="fs-5">
+                <h1 id="BTS_SIO" style="text-align: center">Qu'es-ce que le BTS SIO ?</h1>
+                <p class="fs-5 col card border rounded border-light list-group-item list-group-item text-bg-dark p-3">
                     Le  <abbr title="Brevet de Technicien Supérieur"><button type="button" class="btn btn-outline-secondary btn-sm px-3">BTS</button></abbr> <abbr title="Services Informatiques aux Organisations"><button type="button" class="btn btn-outline-secondary btn-sm px-3">SIO</button></abbr> est une formation en deux ans qui prépare les étudiants aux métiers de l'informatique, notamment dans le développement d'applications et l'administration des systèmes et réseaux.<br>
                     Ce diplôme s'adresse aux passionnés d'informatique souhaitant acquérir des compétences techniques et professionnelles pour intégrer rapidement le marché du travail ou poursuivre leurs études dans le domaine du numérique.
                 </p>
                 <div class="row my-3">
-                    <div class="col border border-dark rounded shadow py-3 bg-danger bg-opacity-25 border-2 mx-3" style="text-align: justify">
+                    <div class="col m-1 card border rounded border-light list-group-item list-group-item text-bg-dark p-3" style="text-align: justify">
                         <h3 class="text-center"><abbr title="Brevet de Technicien Supérieur"><button type="button" class="btn btn-outline-danger btn-lg px-6">SISR</button></abbr></h3>
                         <hr>
                         <p>L’option <b>S</b>olution d’<b>I</b>nfrastructure, <b>S</b>ystèmes et <b>R</b>éseaux forme des professionnels des réseaux et des équipements informatiques (installation, maintenance, sécurité).</p>
@@ -92,7 +92,7 @@
                         <li>&nbsp;Technicien de production</li>
                         <li>&nbsp;Technicien micro et réseaux</li>
                     </div>
-                    <div class="col border border-dark rounded shadow py-3 bg-success bg-opacity-25 border-2 mx-3" style="text-align: justify">
+                    <div class="col m-1 card border rounded border-light list-group-item list-group-item text-bg-dark p-3" style="text-align: justify">
                         <h3 class="text-center"><abbr title="Brevet de Technicien Supérieur"><button type="button" class="btn btn-outline-success btn-lg px-6">SLAM</button></abbr></h3>
                         <hr>
                         <p>L’option <b>S</b>olutions <b>L</b>ogicielles et <b>A</b>pplications <b>M</b>étiers forme des spécialistes des logiciels (rédaction d’un cahier des charges, formulation des besoins et spécifications, développement, intégration au sein de la société).</p>
@@ -107,7 +107,7 @@
                         <li>&nbsp;Technicien d’études informatiques</li>
                     </div>
                 </div>
-                <h1 id="list-item-2" style="text-align: center">Mes Compétences</h1>
+                <h1 id="Competances" style="text-align: center">Mes Compétences</h1>
                 <p class="fs-5">
                 <div class="accordion rounded shadow" id="accordionExample">
                     <div class="accordion-item">
@@ -116,10 +116,10 @@
                                 Compétences Réseaux
                             </button>
                         </h2>
-                        <div id="collapseOne" class="accordion-collapse collapse " data-bs-parent="#accordionExample">
+                        <div id="collapseOne" class="accordion-collapse collapse list-group-item list-group-item text-bg-dark" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
                                 <div class="row">
-                                    <div class="card" style="max-width: 33.33%;">
+                                    <div class="col m-1 card border rounded border-light list-group-item list-group-item text-bg-dark" style="max-width: auto;">
                                         <div class="col" style="text-align: justify">
                                             <div class="card-body">
                                                 <h5 class="card-title">
@@ -135,7 +135,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="card" style="max-width: 33.33%;">
+                                    <div class="col m-1 card border rounded border-light list-group-item list-group-item text-bg-dark" style="max-width: auto;">
                                         <div class="col" style="text-align: justify">
                                             <div class="card-body">
                                                 <h5 class="card-title">
@@ -149,7 +149,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="card" style="max-width: 33.33%;">
+                                    <div class="col m-1 card border rounded border-light list-group-item list-group-item text-bg-dark" style="max-width: auto;">
                                         <div class="col" style="text-align: justify">
                                             <div class="card-body">
                                                 <h5 class="card-title">
@@ -167,7 +167,7 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="card" style="max-width: 50%;">
+                                    <div class="col m-1 card border rounded border-light list-group-item list-group-item text-bg-dark" style="max-width: auto;">
                                         <div class="col" style="text-align: justify">
                                             <div class="card-body">
                                                 <h5 class="card-title">
@@ -183,7 +183,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="card" style="max-width: 50%;">
+                                    <div class="col m-1 card border rounded border-light list-group-item list-group-item text-bg-dark" style="max-width: auto">
                                         <div class="col" style="text-align: justify">
                                             <div class="card-body">
                                                 <h5 class="card-title">
@@ -207,10 +207,10 @@
                                 Langages
                             </button>
                         </h2>
-                        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div id="collapseTwo" class="accordion-collapse collapse list-group-item list-group-item text-bg-dark" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
                                 <div class="row">
-                                    <div class="card" style="max-width: 25%;">
+                                    <div class="col m-1 card border rounded border-light list-group-item list-group-item text-bg-dark" style="max-width: auto;">
                                         <div class="col" style="text-align: justify">
                                             <div class="card-body">
                                                 <h5 class="card-title">
@@ -226,7 +226,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="card" style="max-width: 25%;">
+                                    <div class="col m-1 card border rounded border-light list-group-item list-group-item text-bg-dark" style="max-width: auto;">
                                         <div class="col" style="text-align: justify">
                                             <div class="card-body">
                                                 <h5 class="card-title">
@@ -242,7 +242,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="card" style="max-width: 25%;">
+                                    <div class="col m-1 card border rounded border-light list-group-item list-group-item text-bg-dark" style="max-width: auto;">
                                         <div class="col" style="text-align: justify">
                                             <div class="card-body">
                                                 <h5 class="card-title">
@@ -258,7 +258,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="card" style="max-width: 25%;">
+                                    <div class="col m-1 card border rounded border-light list-group-item list-group-item text-bg-dark" style="max-width: auto;">
                                         <div class="col" style="text-align: justify">
                                             <div class="card-body">
                                                 <h5 class="card-title">
@@ -276,7 +276,7 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="card" style="max-width: 25%;">
+                                    <div class="col m-1 card border rounded border-light list-group-item list-group-item text-bg-dark" style="max-width: auto;">
                                         <div class="col" style="text-align: justify">
                                             <div class="card-body">
                                                 <h5 class="card-title">
@@ -292,7 +292,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="card" style="max-width: 25%;">
+                                    <div class="col m-1 card border rounded border-light list-group-item list-group-item text-bg-dark" style="max-width: auto;">
                                         <div class="col" style="text-align: justify">
                                             <div class="card-body">
                                                 <h5 class="card-title">
@@ -306,7 +306,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="card" style="max-width: 25%;">
+                                    <div class="col m-1 card border rounded border-light list-group-item list-group-item text-bg-dark" style="max-width: auto;">
                                         <div class="col" style="text-align: justify">
                                             <div class="card-body">
                                                 <h5 class="card-title">
@@ -322,7 +322,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="card" style="max-width: 25%;">
+                                    <div class="col m-1 card border rounded border-light list-group-item list-group-item text-bg-dark" style="max-width: auto;">
                                         <div class="col" style="text-align: justify">
                                             <div class="card-body">
                                                 <h5 class="card-title">
@@ -348,10 +348,10 @@
                                 Framework
                             </button>
                         </h2>
-                        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div id="collapseThree" class="accordion-collapse collapse list-group-item list-group-item text-bg-dark" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
                                 <div class="row">
-                                    <div class="card" style="max-width: 50%;">
+                                    <div class="col m-1 card border rounded border-light list-group-item list-group-item text-bg-dark" style="max-width: auto;">
                                         <div class="col" style="text-align: justify">
                                             <div class="card-body">
                                                 <h5 class="card-title">
@@ -365,7 +365,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="card" style="max-width: 50%;">
+                                    <div class="col m-1 card border rounded border-light list-group-item list-group-item text-bg-dark" style="max-width: auto;">
                                         <div class="col" style="text-align: justify">
                                             <div class="card-body">
                                                 <h5 class="card-title">
@@ -381,7 +381,7 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="card" style="max-width: 50%;">
+                                    <div class="col m-1 card border rounded border-light list-group-item list-group-item text-bg-dark" style="max-width: auto;">
                                         <div class="col" style="text-align: justify">
                                             <div class="card-body">
                                                 <h5 class="card-title">
@@ -395,7 +395,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="card" style="max-width: 50%;">
+                                    <div class="col m-1 card border rounded border-light list-group-item list-group-item text-bg-dark" style="max-width: auto;">
                                         <div class="col" style="text-align: justify">
                                             <div class="card-body">
                                                 <h5 class="card-title">
@@ -419,10 +419,10 @@
                                 Integrated Development Environment
                             </button>
                         </h2>
-                        <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div id="collapseFour" class="accordion-collapse collapse list-group-item list-group-item text-bg-dark" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
                                 <div class="row">
-                                    <div class="card" style="max-width: 25%;">
+                                    <div class="col m-1 card border rounded border-light list-group-item list-group-item text-bg-dark" style="max-width: auto;">
                                         <div class="col" style="text-align: justify">
                                             <div class="card-body">
                                                 <h5 class="card-title">
@@ -436,7 +436,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="card" style="max-width: 25%;">
+                                    <div class="col m-1 card border rounded border-light list-group-item list-group-item text-bg-dark" style="max-width: auto;">
                                         <div class="col" style="text-align: justify">
                                             <div class="card-body">
                                                 <h5 class="card-title">
@@ -452,7 +452,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="card" style="max-width: 25%;">
+                                    <div class="col m-1 card border rounded border-light list-group-item list-group-item text-bg-dark" style="max-width: auto;">
                                         <div class="col" style="text-align: justify">
                                             <div class="card-body">
                                                 <h5 class="card-title">
@@ -468,7 +468,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="card" style="max-width: 25%;">
+                                    <div class="col m-1 card border rounded border-light list-group-item list-group-item text-bg-dark" style="max-width: auto;">
                                         <div class="col" style="text-align: justify">
                                             <div class="card-body">
                                                 <h5 class="card-title">
@@ -496,10 +496,10 @@
                                 Content Management System
                             </button>
                         </h2>
-                        <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div id="collapseFive" class="accordion-collapse collapse list-group-item list-group-item text-bg-dark" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
                                 <div class="row">
-                                    <div class="card" style="max-width: 100%;">
+                                    <div class="col m-1 card border rounded border-light list-group-item list-group-item text-bg-dark" style="max-width: auto;">
                                         <div class="col" style="text-align: justify">
                                             <div class="card-body">
                                                 <h5 class="card-title">
@@ -525,10 +525,10 @@
                                 Gestion de version
                             </button>
                         </h2>
-                        <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div id="collapseSix" class="accordion-collapse collapse list-group-item list-group-item text-bg-dark" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
                                 <div class="row">
-                                    <div class="card" style="max-width: 50%;">
+                                    <div class="col m-1 card border rounded border-light list-group-item list-group-item text-bg-dark" style="max-width: auto;">
                                         <div class="col" style="text-align: justify">
                                             <div class="card-body">
                                                 <h5 class="card-title">
@@ -544,7 +544,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="card" style="max-width: 50%;">
+                                    <div class="col m-1 card border rounded border-light list-group-item list-group-item text-bg-dark" style="max-width: auto;">
                                         <div class="col" style="text-align: justify">
                                             <div class="card-body">
                                                 <h5 class="card-title">
@@ -570,10 +570,10 @@
                                 Outil bureautique
                             </button>
                         </h2>
-                        <div id="collapseSeven" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div id="collapseSeven" class="accordion-collapse collapse list-group-item list-group-item text-bg-dark" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
                                 <div class="row">
-                                    <div class="card" style="max-width: 33.33%;">
+                                    <div class="col m-1 card border rounded border-light list-group-item list-group-item text-bg-dark" style="max-width: auto;">
                                         <div class="col" style="text-align: justify">
                                             <div class="card-body">
                                                 <h5 class="card-title">
@@ -589,7 +589,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="card" style="max-width: 33.33%;">
+                                    <div class="col m-1 card border rounded border-light list-group-item list-group-item text-bg-dark" style="max-width: auto;">
                                         <div class="col" style="text-align: justify">
                                             <div class="card-body">
                                                 <h5 class="card-title">
@@ -605,7 +605,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="card" style="max-width: 33.33%;">
+                                    <div class="col m-1 card border rounded border-light list-group-item list-group-item text-bg-dark" style="max-width: auto;">
                                         <div class="col" style="text-align: justify">
                                             <div class="card-body">
                                                 <h5 class="card-title">
@@ -631,10 +631,10 @@
                                 Gestion de tickets
                             </button>
                         </h2>
-                        <div id="collapseEight" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div id="collapseEight" class="accordion-collapse collapse list-group-item list-group-item text-bg-dark" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
                                 <div class="row">
-                                    <div class="card" style="max-width: 100%;">
+                                    <div class="col m-1 card border rounded border-light list-group-item list-group-item text-bg-dark" style="max-width: 100%;">
                                         <div class="col" style="text-align: justify">
                                             <div class="card-body">
                                                 <h5 class="card-title">
@@ -655,9 +655,9 @@
                     </div>
                 </div>
                 </p>
-                <h1 id="list-item-3" style="text-align: center">Mes expériences professionnelles</h1>
+                <h1 id="Experiences" style="text-align: center">Mes expériences professionnelles</h1>
                 <p class="fs-5">
-                <div class="col bg-dark-subtle text-dark-emphasis p-3 my-3 rounded shadow">
+                <div class="col text-bg-dark p-3 my-3 rounded shadow">
                     <h4 class="ps-5" style="text-transform: uppercase"><strong>Assistance Utilisateur</strong></h4>
                     <div class="row">
                         <div class="col-3">
@@ -691,15 +691,15 @@
                         <div class="col">
                             <h5 class="ps-5">Taches effectuées</h5>
                             <ul class="list-group">
-                                <li class="list-group-item list-group-item-dark">Assistance utilisateur à distance</li>
-                                <li class="list-group-item list-group-item-dark">Changement des mots de passe et réinitialisation de poste</li>
-                                <li class="list-group-item list-group-item-dark">Intervention en entreprises partenaires</li>
-                                <li class="list-group-item list-group-item-dark">Amélioration de l'efficacité de travail</li>
+                                <li class="list-group-item list-group-item text-bg-dark">Assistance utilisateur à distance</li>
+                                <li class="list-group-item list-group-item text-bg-dark">Changement des mots de passe et réinitialisation de poste</li>
+                                <li class="list-group-item list-group-item text-bg-dark">Intervention en entreprises partenaires</li>
+                                <li class="list-group-item list-group-item text-bg-dark">Amélioration de l'efficacité de travail</li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                <div class="col bg-dark-subtle text-dark-emphasis p-3 my-3 rounded shadow">
+                <div class="col text-bg-dark p-3 my-3 rounded shadow">
                     <h4 class="ps-5" style="text-transform: uppercase"><strong>Employé libre service</strong></h4>
                     <div class="row">
                         <div class="col-3">
@@ -733,17 +733,17 @@
                         <div class="col">
                             <h5 class="ps-5">Taches effectuées</h5>
                             <ul class="list-group">
-                                <li class="list-group-item list-group-item-dark">Mise en rayon</li>
-                                <li class="list-group-item list-group-item-dark">Service de livraison</li>
-                                <li class="list-group-item list-group-item-dark">Gestion de la caisse</li>
-                                <li class="list-group-item list-group-item-dark">Conseillé de vente</li>
-                                <li class="list-group-item list-group-item-dark">Entretient du magazin</li>
-                                <li class="list-group-item list-group-item-dark">Ouverture & Fermeture de l'établissement</li>
+                                <li class="list-group-item list-group-item text-bg-dark">Mise en rayon</li>
+                                <li class="list-group-item list-group-item text-bg-dark">Service de livraison</li>
+                                <li class="list-group-item list-group-item text-bg-dark">Gestion de la caisse</li>
+                                <li class="list-group-item list-group-item text-bg-dark">Conseillé de vente</li>
+                                <li class="list-group-item list-group-item text-bg-dark">Entretient du magazin</li>
+                                <li class="list-group-item list-group-item text-bg-dark">Ouverture & Fermeture de l'établissement</li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                <div class="col bg-dark-subtle text-dark-emphasis p-3 my-3 rounded shadow">
+                <div class="col text-bg-dark p-3 my-3 rounded shadow">
                     <h4 class="ps-5" style="text-transform: uppercase"><strong>Service informatique</strong></h4>
                     <div class="row">
                         <div class="col-3">
@@ -777,15 +777,15 @@
                         <div class="col">
                             <h5 class="ps-5">Taches effectuées</h5>
                             <ul class="list-group">
-                                <li class="list-group-item list-group-item-dark">Maintenance utilisateurs</li>
-                                <li class="list-group-item list-group-item-dark">Préparation de postes de travail</li>
-                                <li class="list-group-item list-group-item-dark">Installation de logiciel</li>
-                                <li class="list-group-item list-group-item-dark">Accès à distance</li>
+                                <li class="list-group-item list-group-item text-bg-dark">Maintenance utilisateurs</li>
+                                <li class="list-group-item list-group-item text-bg-dark">Préparation de postes de travail</li>
+                                <li class="list-group-item list-group-item text-bg-dark">Installation de logiciel</li>
+                                <li class="list-group-item list-group-item text-bg-dark">Accès à distance</li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                <div class="col bg-dark-subtle text-dark-emphasis p-3 my-3 rounded shadow">
+                <div class="col text-bg-dark p-3 my-3 rounded shadow">
                     <h4 class="ps-5" style="text-transform: uppercase"><strong>Service de traitement</strong></h4>
                     <div class="row">
                         <div class="col-3">
@@ -819,13 +819,13 @@
                         <div class="col">
                             <h5 class="ps-5">Taches effectuées</h5>
                             <ul class="list-group">
-                                <li class="list-group-item list-group-item-dark">Vérification des systèmes d'éxportations</li>
-                                <li class="list-group-item list-group-item-dark">Vérification des systèmes de livraisons</li>
+                                <li class="list-group-item list-group-item text-bg-dark">Vérification des systèmes d'éxportations</li>
+                                <li class="list-group-item list-group-item text-bg-dark">Vérification des systèmes de livraisons</li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                <div class="col bg-dark-subtle text-dark-emphasis p-3 my-3 rounded shadow">
+                <div class="col text-bg-dark p-3 my-3 rounded shadow">
                     <h4 class="ps-5" style="text-transform: uppercase"><strong>Service Cybersécurité</strong></h4>
                     <div class="row">
                         <div class="col-3">
@@ -858,16 +858,16 @@
                         </div>
                         <div class="col">
                             <h5 class="ps-5">Taches effectuées</h5>
-                            <ul class="list-group">
-                                <li class="list-group-item list-group-item-dark">Réinitialisations d'ordinateurs</li>
-                                <li class="list-group-item list-group-item-dark">Création de sites internets</li>
-                                <li class="list-group-item list-group-item-dark">Installation de systèmes d'exploitation (Win 10)</li>
-                                <li class="list-group-item list-group-item-dark">Installation de logiciels</li>
+                            <ul class="list-group bg-dark">
+                                <li class="list-group-item list-group-item text-bg-dark">Réinitialisations d'ordinateurs</li>
+                                <li class="list-group-item list-group-item text-bg-dark">Création de sites internets</li>
+                                <li class="list-group-item list-group-item text-bg-dark">Installation de systèmes d'exploitation (Win 10)</li>
+                                <li class="list-group-item list-group-item text-bg-dark">Installation de logiciels</li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                <div class="col bg-dark-subtle text-dark-emphasis p-3 my-3 rounded shadow">
+                <div class="col text-bg-dark p-3 my-3 rounded shadow">
                     <h4 class="ps-5" style="text-transform: uppercase"><strong>Laboratoire d'analyse</strong></h4>
                     <div class="row">
                         <div class="col-3">
@@ -901,20 +901,22 @@
                         <div class="col">
                             <h5 class="ps-5">Taches effectuées</h5>
                             <ul class="list-group">
-                                <li class="list-group-item list-group-item-dark">Vérification d'analyses de minerais</li>
-                                <li class="list-group-item list-group-item-dark">Traitement des données</li>
-                                <li class="list-group-item list-group-item-dark">Analyse d'échantillons</li>
+                                <li class="list-group-item list-group-item text-bg-dark">Vérification d'analyses de minerais</li>
+                                <li class="list-group-item list-group-item text-bg-dark">Traitement des données</li>
+                                <li class="list-group-item list-group-item text-bg-dark">Analyse d'échantillons</li>
                             </ul>
                         </div>
                     </div>
                 </div>
-
-                </p>
-                <h4 id="list-item-4">Mes formations</h4>
-                <p class="fs-5"></p>
             </div>
+            <hr>
+            <h1 id="Certificats" style="text-align: center">Mes diplômes</h1>
+            <p class="fs-5">
+            </p>
+            <hr class="mb-3">
         </div>
     </div>
+</div>
 </div>
 
 <script>
