@@ -2,14 +2,14 @@
 <div class="accordion rounded shadow" id="accordionExample">
     <div class="accordion-item">
         <h2 class="accordion-header">
-            <button class="accordion-button text-bg-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                Compétences Réseaux
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Compétences réseaux
             </button>
         </h2>
-        <div id="collapseOne" class="accordion-collapse collapse list-group-item list-group-item text-bg-dark" data-bs-parent="#accordionExample">
+        <div id="collapseOne" class="accordion-collapse collapse list-group-item list-group-item" data-bs-parent="#accordionExample">
             <div class="accordion-body">
                 <div class="row">
-                    <div class="col m-1 card border rounded border-light list-group-item list-group-item text-bg-dark" style="max-width: auto;">
+                    <div class="col m-1 card border rounded border-light list-group-item list-group-item" style="max-width: auto;">
                         <div class="col" style="text-align: justify">
                             <div class="card-body">
                                 <h5 class="card-title">
@@ -25,7 +25,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col m-1 card border rounded border-light list-group-item list-group-item text-bg-dark" style="max-width: auto;">
+                    <div class="col m-1 card border rounded border-light list-group-item list-group-item" style="max-width: auto;">
                         <div class="col" style="text-align: justify">
                             <div class="card-body">
                                 <h5 class="card-title">
@@ -39,7 +39,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col m-1 card border rounded border-light list-group-item list-group-item text-bg-dark" style="max-width: auto;">
+                    <div class="col m-1 card border rounded border-light list-group-item list-group-item" style="max-width: auto;">
                         <div class="col" style="text-align: justify">
                             <div class="card-body">
                                 <h5 class="card-title">
@@ -57,7 +57,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col m-1 card border rounded border-light list-group-item list-group-item text-bg-dark" style="max-width: auto;">
+                    <div class="col m-1 card border rounded border-light list-group-item list-group-item" style="max-width: auto;">
                         <div class="col" style="text-align: justify">
                             <div class="card-body">
                                 <h5 class="card-title">
@@ -73,7 +73,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col m-1 card border rounded border-light list-group-item list-group-item text-bg-dark" style="max-width: auto">
+                    <div class="col m-1 card border rounded border-light list-group-item list-group-item" style="max-width: auto">
                         <div class="col" style="text-align: justify">
                             <div class="card-body">
                                 <h5 class="card-title">
@@ -96,14 +96,14 @@
 
     <div class="accordion-item">
         <h2 class="accordion-header">
-            <button class="accordion-button text-bg-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                 Langages
             </button>
         </h2>
-        <div id="collapseTwo" class="accordion-collapse collapse list-group-item list-group-item text-bg-dark" data-bs-parent="#accordionExample">
+        <div id="collapseTwo" class="accordion-collapse collapse list-group-item list-group-item" data-bs-parent="#accordionExample">
             <div class="accordion-body">
                 <div class="row">
-                    <div class="col m-1 card border rounded border-light list-group-item list-group-item text-bg-dark" style="max-width: auto;">
+                    <div class="col m-1 card border rounded border-light list-group-item list-group-item" style="max-width: auto;">
                         <div class="col" style="text-align: justify">
                             <div class="card-body">
                                 <h5 class="card-title">
@@ -119,7 +119,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col m-1 card border rounded border-light list-group-item list-group-item text-bg-dark" style="max-width: auto;">
+                    <div class="col m-1 card border rounded border-light list-group-item list-group-item" style="max-width: auto;">
                         <div class="col" style="text-align: justify">
                             <div class="card-body">
                                 <h5 class="card-title">
@@ -135,7 +135,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col m-1 card border rounded border-light list-group-item list-group-item text-bg-dark" style="max-width: auto;">
+                    <div class="col m-1 card border rounded border-light list-group-item list-group-item" style="max-width: auto;">
                         <div class="col" style="text-align: justify">
                             <div class="card-body">
                                 <h5 class="card-title">
@@ -151,7 +151,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col m-1 card border rounded border-light list-group-item list-group-item text-bg-dark" style="max-width: auto;">
+                    <div class="col m-1 card border rounded border-light list-group-item list-group-item" style="max-width: auto;">
                         <div class="col" style="text-align: justify">
                             <div class="card-body">
                                 <h5 class="card-title">
@@ -169,7 +169,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col m-1 card border rounded border-light list-group-item list-group-item text-bg-dark" style="max-width: auto;">
+                    <div class="col m-1 card border rounded border-light list-group-item list-group-item" style="max-width: auto;">
                         <div class="col" style="text-align: justify">
                             <div class="card-body">
                                 <h5 class="card-title">
@@ -185,7 +185,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col m-1 card border rounded border-light list-group-item list-group-item text-bg-dark" style="max-width: auto;">
+                    <div class="col m-1 card border rounded border-light list-group-item list-group-item" style="max-width: auto;">
                         <div class="col" style="text-align: justify">
                             <div class="card-body">
                                 <h5 class="card-title">
@@ -199,7 +199,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col m-1 card border rounded border-light list-group-item list-group-item text-bg-dark" style="max-width: auto;">
+                    <div class="col m-1 card border rounded border-light list-group-item list-group-item" style="max-width: auto;">
                         <div class="col" style="text-align: justify">
                             <div class="card-body">
                                 <h5 class="card-title">
@@ -215,7 +215,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col m-1 card border rounded border-light list-group-item list-group-item text-bg-dark" style="max-width: auto;">
+                    <div class="col m-1 card border rounded border-light list-group-item list-group-item" style="max-width: auto;">
                         <div class="col" style="text-align: justify">
                             <div class="card-body">
                                 <h5 class="card-title">
@@ -240,14 +240,14 @@
 
     <div class="accordion-item">
         <h2 class="accordion-header">
-            <button class="accordion-button text-bg-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                 Framework
             </button>
         </h2>
-        <div id="collapseThree" class="accordion-collapse collapse list-group-item list-group-item text-bg-dark" data-bs-parent="#accordionExample">
+        <div id="collapseThree" class="accordion-collapse collapse list-group-item list-group-item" data-bs-parent="#accordionExample">
             <div class="accordion-body">
                 <div class="row">
-                    <div class="col m-1 card border rounded border-light list-group-item list-group-item text-bg-dark" style="max-width: auto;">
+                    <div class="col m-1 card border rounded border-light list-group-item list-group-item" style="max-width: auto;">
                         <div class="col" style="text-align: justify">
                             <div class="card-body">
                                 <h5 class="card-title">
@@ -261,7 +261,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col m-1 card border rounded border-light list-group-item list-group-item text-bg-dark" style="max-width: auto;">
+                    <div class="col m-1 card border rounded border-light list-group-item list-group-item" style="max-width: auto;">
                         <div class="col" style="text-align: justify">
                             <div class="card-body">
                                 <h5 class="card-title">
@@ -277,7 +277,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col m-1 card border rounded border-light list-group-item list-group-item text-bg-dark" style="max-width: auto;">
+                    <div class="col m-1 card border rounded border-light list-group-item list-group-item" style="max-width: auto;">
                         <div class="col" style="text-align: justify">
                             <div class="card-body">
                                 <h5 class="card-title">
@@ -291,7 +291,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col m-1 card border rounded border-light list-group-item list-group-item text-bg-dark" style="max-width: auto;">
+                    <div class="col m-1 card border rounded border-light list-group-item list-group-item" style="max-width: auto;">
                         <div class="col" style="text-align: justify">
                             <div class="card-body">
                                 <h5 class="card-title">
@@ -314,14 +314,14 @@
 
     <div class="accordion-item">
         <h2 class="accordion-header">
-            <button class="accordion-button text-bg-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                 Integrated Development Environment
             </button>
         </h2>
-        <div id="collapseFour" class="accordion-collapse collapse list-group-item list-group-item text-bg-dark" data-bs-parent="#accordionExample">
+        <div id="collapseFour" class="accordion-collapse collapse list-group-item list-group-item" data-bs-parent="#accordionExample">
             <div class="accordion-body">
                 <div class="row">
-                    <div class="col m-1 card border rounded border-light list-group-item list-group-item text-bg-dark" style="max-width: auto;">
+                    <div class="col m-1 card border rounded border-light list-group-item list-group-item" style="max-width: auto;">
                         <div class="col" style="text-align: justify">
                             <div class="card-body">
                                 <h5 class="card-title">
@@ -335,7 +335,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col m-1 card border rounded border-light list-group-item list-group-item text-bg-dark" style="max-width: auto;">
+                    <div class="col m-1 card border rounded border-light list-group-item list-group-item" style="max-width: auto;">
                         <div class="col" style="text-align: justify">
                             <div class="card-body">
                                 <h5 class="card-title">
@@ -351,7 +351,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col m-1 card border rounded border-light list-group-item list-group-item text-bg-dark" style="max-width: auto;">
+                    <div class="col m-1 card border rounded border-light list-group-item list-group-item" style="max-width: auto;">
                         <div class="col" style="text-align: justify">
                             <div class="card-body">
                                 <h5 class="card-title">
@@ -367,7 +367,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col m-1 card border rounded border-light list-group-item list-group-item text-bg-dark" style="max-width: auto;">
+                    <div class="col m-1 card border rounded border-light list-group-item list-group-item" style="max-width: auto;">
                         <div class="col" style="text-align: justify">
                             <div class="card-body">
                                 <h5 class="card-title">
@@ -394,14 +394,14 @@
 
     <div class="accordion-item">
         <h2 class="accordion-header">
-            <button class="accordion-button text-bg-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
                 Content Management System
             </button>
         </h2>
-        <div id="collapseFive" class="accordion-collapse collapse list-group-item list-group-item text-bg-dark" data-bs-parent="#accordionExample">
+        <div id="collapseFive" class="accordion-collapse collapse list-group-item list-group-item" data-bs-parent="#accordionExample">
             <div class="accordion-body">
                 <div class="row">
-                    <div class="col m-1 card border rounded border-light list-group-item list-group-item text-bg-dark" style="max-width: auto;">
+                    <div class="col m-1 card border rounded border-light list-group-item list-group-item" style="max-width: auto;">
                         <div class="col" style="text-align: justify">
                             <div class="card-body">
                                 <h5 class="card-title">
@@ -426,14 +426,14 @@
 
     <div class="accordion-item">
         <h2 class="accordion-header">
-            <button class="accordion-button text-bg-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
                 Gestion de version
             </button>
         </h2>
-        <div id="collapseSix" class="accordion-collapse collapse list-group-item list-group-item text-bg-dark" data-bs-parent="#accordionExample">
+        <div id="collapseSix" class="accordion-collapse collapse list-group-item list-group-item" data-bs-parent="#accordionExample">
             <div class="accordion-body">
                 <div class="row">
-                    <div class="col m-1 card border rounded border-light list-group-item list-group-item text-bg-dark" style="max-width: auto;">
+                    <div class="col m-1 card border rounded border-light list-group-item list-group-item" style="max-width: auto;">
                         <div class="col" style="text-align: justify">
                             <div class="card-body">
                                 <h5 class="card-title">
@@ -449,7 +449,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col m-1 card border rounded border-light list-group-item list-group-item text-bg-dark" style="max-width: auto;">
+                    <div class="col m-1 card border rounded border-light list-group-item list-group-item" style="max-width: auto;">
                         <div class="col" style="text-align: justify">
                             <div class="card-body">
                                 <h5 class="card-title">
@@ -474,14 +474,14 @@
 
     <div class="accordion-item">
         <h2 class="accordion-header">
-            <button class="accordion-button text-bg-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
                 Outil bureautique
             </button>
         </h2>
-        <div id="collapseSeven" class="accordion-collapse collapse list-group-item list-group-item text-bg-dark" data-bs-parent="#accordionExample">
+        <div id="collapseSeven" class="accordion-collapse collapse list-group-item list-group-item" data-bs-parent="#accordionExample">
             <div class="accordion-body">
                 <div class="row">
-                    <div class="col m-1 card border rounded border-light list-group-item list-group-item text-bg-dark" style="max-width: auto;">
+                    <div class="col m-1 card border rounded border-light list-group-item list-group-item" style="max-width: auto;">
                         <div class="col" style="text-align: justify">
                             <div class="card-body">
                                 <h5 class="card-title">
@@ -497,7 +497,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col m-1 card border rounded border-light list-group-item list-group-item text-bg-dark" style="max-width: auto;">
+                    <div class="col m-1 card border rounded border-light list-group-item list-group-item" style="max-width: auto;">
                         <div class="col" style="text-align: justify">
                             <div class="card-body">
                                 <h5 class="card-title">
@@ -513,7 +513,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col m-1 card border rounded border-light list-group-item list-group-item text-bg-dark" style="max-width: auto;">
+                    <div class="col m-1 card border rounded border-light list-group-item list-group-item" style="max-width: auto;">
                         <div class="col" style="text-align: justify">
                             <div class="card-body">
                                 <h5 class="card-title">
@@ -538,14 +538,14 @@
 
     <div class="accordion-item">
         <h2 class="accordion-header">
-            <button class="accordion-button text-bg-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
                 Gestion de tickets
             </button>
         </h2>
-        <div id="collapseEight" class="accordion-collapse collapse list-group-item list-group-item text-bg-dark" data-bs-parent="#accordionExample">
+        <div id="collapseEight" class="accordion-collapse collapse list-group-item list-group-item" data-bs-parent="#accordionExample">
             <div class="accordion-body">
                 <div class="row">
-                    <div class="col m-1 card border rounded border-light list-group-item list-group-item text-bg-dark" style="max-width: 100%;">
+                    <div class="col m-1 card border rounded border-light list-group-item list-group-item" style="max-width: 100%;">
                         <div class="col" style="text-align: justify">
                             <div class="card-body">
                                 <h5 class="card-title">

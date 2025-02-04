@@ -1,4 +1,4 @@
-<div class="card my-3 text-bg-dark" style="width: 100%;">
+<div class="card my-3" style="width: 100%;">
     <img src="A_Erceville.png" class="rounded shadow mx-3 my-3" alt="Augustin d'Erceville">
     <div class="card-body">
         <h5 class="card-title text-uppercase text-center fs-3">Augustin d'ERCEVILLE</h5>

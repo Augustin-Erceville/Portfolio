@@ -17,28 +17,28 @@
                 <a href="https://numeritek.fr/" target="_blank" class="badge text-bg-primary fs-6 fw-lighter" style="text-decoration: none">Numeritek</a>
                 <span class="badge text-bg-warning fs-6 fw-lighter">Stage</span>
                 <span class="badge text-bg-secondary fs-6 fw-lighter">Mai 2024</span>
-                <span class="badge text-bg-secondary fs-6 fw-lighter">Rosgny-sous-bois</span>
+                <span class="badge text-bg-secondary fs-6 fw-lighter">Rosny-sous-bois</span>
             </div>
         </div>
     </div>
     <div class="col mb-3">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">Employé libre service</h5>
+                <h5 class="card-title">Employé libre-service</h5>
             </div>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">Mise en rayon</li>
                 <li class="list-group-item">Service de livraison</li>
                 <li class="list-group-item">Gestion de la caisse</li>
-                <li class="list-group-item">Conseillé de vente</li>
+                <li class="list-group-item">Conseiller de vente</li>
                 <li class="list-group-item">Entretient du magasin</li>
-                <li class="list-group-item">Ouverture & Fermeture de l'établissement</li>
+                <li class="list-group-item">Ouverture & fermeture de l'établissement</li>
             </ul>
             <div class="card-body">
                 <a href="https://magasins.spar.fr/fr/spar-chamalieres-royat" target="_blank" class="badge text-bg-primary fs-6 fw-lighter" style="text-decoration: none">SPAR</a>
                 <span class="badge text-bg-danger fs-6 fw-lighter">Emplois</span>
                 <span class="badge text-bg-secondary fs-6 fw-lighter">2023 - 2024</span>
-                <span class="badge text-bg-secondary fs-6 fw-lighter">63400 Chamalière</span>
+                <span class="badge text-bg-secondary fs-6 fw-lighter">63400 Chamalières</span>
             </div>
         </div>
     </div>
@@ -71,7 +71,7 @@
                 <h5 class="card-title">Service de traitement</h5>
             </div>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item">Vérification des systèmes d'éxportations</li>
+                <li class="list-group-item">Vérification des systèmes d'exportations</li>
                 <li class="list-group-item">Vérification des systèmes de livraisons</li>
                 <li class="list-group-item">Surveillance de la chaine de production</li>
                 <li class="list-group-item">­</li>
@@ -91,7 +91,7 @@
             </div>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">Réinitialisations d'ordinateurs</li>
-                <li class="list-group-item">Création de sites internets</li>
+                <li class="list-group-item">Création de sites internet</li>
                 <li class="list-group-item">Installation de systèmes d'exploitation (Win 10)</li>
                 <li class="list-group-item">Installation de logiciels</li>
             </ul>
@@ -99,7 +99,7 @@
                 <a href="https://www.eramet.com/fr/" target="_blank" class="badge text-bg-primary fs-6 fw-lighter" style="text-decoration: none">Eramet</a>
                 <span class="badge text-bg-warning fs-6 fw-lighter">Stage</span>
                 <span class="badge text-bg-secondary fs-6 fw-lighter">Jul 2018</span>
-                <span class="badge text-bg-secondary fs-6 fw-lighter">63000 Clermont-Frd</span>
+                <span class="badge text-bg-secondary fs-6 fw-lighter">63000 Clermont-Fd</span>
             </div>
         </div>
     </div>
@@ -109,7 +109,7 @@
                 <h5 class="card-title">Laboratoire d'analyse</h5>
             </div>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item">Vérification d'analyses de minerais</li>
+                <li class="list-group-item">Vérification d'analyses de minerai</li>
                 <li class="list-group-item">Traitement des données</li>
                 <li class="list-group-item">Analyse d'échantillons</li>
                 <li class="list-group-item">­</li>

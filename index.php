@@ -4,11 +4,11 @@
         <div class="col-3">
             <?php include "Carte.php"; ?>
         </div>
-        <div class="col m-3 lh-base text-bg-dark rounded">
+        <div class="col m-3 lh-base rounded">
             <h1 class="text-center">Présentation</h1>
             <p class="fs-5">
                 Bonjour, bienvenue sur mon portfolio,<br>
-                Avant de découvrir mon parcours, mes compétences et mes expériences professionnel, je vais avant tout me présenter.</p>
+                Avant de découvrir mon parcours, mes compétences et mes expériences professionnelles, je vais avant tout me présenter.</p>
             <p class="fs-5">
                 Je m'appelle Augustin Rolland de Chambaudoin d'Erceville, mais mon nom usuel est juste d'Erceville.<br>
                 Je suis née le 22 septembre 2000 à Volgograd (Russie). Durant mon enfance, j'ai rapidement été attiré par le monde de l'informatique.<br>
@@ -24,21 +24,21 @@
     <div class="row">
         <div class="col-3">
             <div id="list-example" class="list-group">
-                <a class="list-group-item list-group-item-action text-start text-bg-dark" href="#BTS_SIO">BTS SIO</a>
-                <a class="list-group-item list-group-item-action text-start text-bg-dark" href="#Competances">Compétences</a>
-                <a class="list-group-item list-group-item-action text-start text-bg-dark" href="#Experiences">Expériences</a>
-                <a class="list-group-item list-group-item-action text-start text-bg-dark" href="#Certificats">Certificats</a>
+                <a class="list-group-item list-group-item-action text-start" href="#BTS_SIO">BTS SIO</a>
+                <a class="list-group-item list-group-item-action text-start" href="#Competances">Compétences</a>
+                <a class="list-group-item list-group-item-action text-start" href="#Experiences">Expériences</a>
+                <a class="list-group-item list-group-item-action text-start" href="#Certificats">Diplômes</a>
             </div>
         </div>
         <div class="col">
             <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
-                <h1 id="BTS_SIO"  class="text-bg-dark py-3 rounded"  style="text-align: center">Qu'es-ce que le BTS SIO ?</h1>
+                <h1 id="BTS_SIO"  class=" py-3 rounded"  style="text-align: center">Qu'est-ce que le BTS SIO ?</h1>
                 <?php include "BTS-SIO.php"?>
-                <h1 id="Competances"  class="text-bg-dark py-3 rounded"  style="text-align: center">Mes Compétences</h1>
+                <h1 id="Competances"  class="py-3 rounded"  style="text-align: center">Mes compétences</h1>
                 <?php include "Competences.php" ?>
-                <h1 id="Experiences"  class="text-bg-dark py-3 rounded"  style="text-align: center">Mes expériences professionnelles</h1>
+                <h1 id="Experiences"  class="py-3 rounded"  style="text-align: center">Mes expériences professionnelles</h1>
                 <?php include "Experiences.php"; ?>
-                <h1 id="Certificats"  class="text-bg-dark py-3 rounded"  style="text-align: center">Mes diplômes</h1>
+                <h1 id="Certificats"  class="py-3 rounded"  style="text-align: center">Mes diplômes</h1>
                 <?php include "Diplomes.php"?>
             </div>
             <hr class="mb-3">
