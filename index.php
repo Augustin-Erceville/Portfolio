@@ -32,13 +32,13 @@
         </div>
         <div class="col">
             <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
-                <h1 id="BTS_SIO" style="text-align: center">Qu'es-ce que le BTS SIO ?</h1>
+                <h1 id="BTS_SIO"  class="text-bg-dark py-3 rounded"  style="text-align: center">Qu'es-ce que le BTS SIO ?</h1>
                 <?php include "BTS-SIO.php"?>
-                <h1 id="Competances" style="text-align: center">Mes Compétences</h1>
+                <h1 id="Competances"  class="text-bg-dark py-3 rounded"  style="text-align: center">Mes Compétences</h1>
                 <?php include "Competences.php" ?>
-                <h1 id="Experiences" style="text-align: center">Mes expériences professionnelles</h1>
+                <h1 id="Experiences"  class="text-bg-dark py-3 rounded"  style="text-align: center">Mes expériences professionnelles</h1>
                 <?php include "Experiences.php"; ?>
-                <h1 id="Certificats" style="text-align: center">Mes diplômes</h1>
+                <h1 id="Certificats"  class="text-bg-dark py-3 rounded"  style="text-align: center">Mes diplômes</h1>
                 <?php include "Diplomes.php"?>
             </div>
             <hr class="mb-3">

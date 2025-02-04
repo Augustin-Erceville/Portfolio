@@ -10,7 +10,7 @@
         @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
     </style>
 </head>
-<body style="font-family: Comfortaa;">
+<body class="bg-body-tertiary">
 <header class="navbar text-bg-dark">
     <div class="container-fluid">
         <a class="navbar-brand text-white fs-3 my-2" href="index.php">
