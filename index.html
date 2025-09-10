@@ -1,10 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Titre de la page</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body>
+<body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 flex flex-col min-h-screen">
 
+<div id="header"></div>
+
+<main class="flex-grow container mx-auto p-6">
+    <h1 class="text-3xl font-bold mb-4">Titre de la page</h1>
+    <p>Contenu spécifique à cette page.</p>
+</main>
+
+<footer class="bg-gray-100 dark:bg-gray-800 text-center p-4 text-sm">
+    © 2025 - Mon Portfolio - Par AERCE
+</footer>
+
+<script>
+    fetch("header.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("header").innerHTML = data;
+        });
+</script>
 </body>
 </html>
