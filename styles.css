@@ -1,3 +1,8 @@
+.nav-pills .nav-link.active {
+    background-color: #343a40;
+    color: #ffffff;
+}
+
 .popup-header {
     background-color: #343a40;
     color: #ffffff !important;
