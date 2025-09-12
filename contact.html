@@ -66,197 +66,179 @@
         </nav>
     </div>
 </header>
-<section class="row m-3 ">
+<section class="row m-3">
     <article class="col bg-dark m-3">
-        <div class="mockup-browser border-base-300 border w-full bg-dark-subtle">
-            <div class="mockup-browser-toolbar">
-                <div class="input">https://portfolio.arce/gmail</div>
+        <div class="window flex-1 border rounded-lg overflow-hidden bg-gray-800 h-100">
+            <div class="window-header flex items-center gap-2 bg-gray-700 text-white px-3 py-1">
+                <span class="w-3 h-3 bg-red-500 rounded-full"></span>
+                <span class="w-3 h-3 bg-yellow-500 rounded-full"></span>
+                <span class="w-3 h-3 bg-green-500 rounded-full"></span>
+                <span class="text-center text-dark text-uppercase bg-light rounded position-relative top-50 start-5 my-1 px-3 w-75">https://portfolio.arce/gmail</span>
             </div>
-            <div class="grid place-content-center border-t border-base-300 h-80 bg-dark">
-                <div class="card mb-3 bg-dark text-light" style="max-width: 540px;">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src="https://img.icons8.com/?size=100&id=Iq5AZypojpBD&format=png&color=000000"
-                                 width="512" height="512"
-                                 class="img-fluid rounded-start p-3"
-                                 alt="Icône Email">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title text-uppercase">Email</h5>
-                                <p class="card-text">
-                                    This is a wider card with supporting text below as a natural lead-in to additional
-                                    content.
-                                    This content is a little bit longer.
-                                </p>
-                                <a href="" id="copyEmailBtn" class="btn btn-outline-danger">
-                                    Contacter
-                                </a>
-                                <p id="copyMsg" style="display:none; color:limegreen; margin-top:10px;">
-                                    Adresse email copiée !
-                                </p>
-                                <script>
-                                    document.getElementById("copyEmailBtn").addEventListener("click", function (e) {
-                                        e.preventDefault();
-                                        const email = "augustinderceville@gmail.com";
-                                        navigator.clipboard.writeText(email).then(() => {
-                                            const msg = document.getElementById("copyMsg");
-                                            msg.style.display = "block";
-                                            setTimeout(() => {
-                                                msg.style.display = "none";
-                                            }, 5000);
-                                        }).catch(err => {
-                                            alert("Impossible de copier l'adresse email.");
-                                            console.error(err);
-                                        });
-                                    });
-                                </script>
-                                <p class="card-text">
-                                    <small class="text-dark-emphasis">Mise à jour • 12/09/2025</small>
-                                </p>
-                            </div>
-                        </div>
+            <div class="row g-0">
+                <div class="col-3">
+                    <img src="https://img.icons8.com/?size=100&id=Iq5AZypojpBD&format=png&color=000000" width="512" height="512" class="img-fluid rounded-start p-3" alt="Logo Gmail">
+                </div>
+                <div class="col">
+                    <div class="card-body p-3 text-light">
+                        <h5 class="card-title text-uppercase">Adresse mail</h5>
+                        <p class="card-text">Le moyen le plus direct pour me contacter. Que ce soit pour une collaboration, une opportunité professionnelle ou une simple question, je réponds généralement rapidement.</p>
+                        <a href="" id="copyEmailBtn" class="btn btn-outline-danger">
+                            Contacter par mail
+                        </a>
+                        <p id="copyMsg" style="display:none; color:limegreen; margin-top:10px;">
+                            Adresse email copiée
+                        </p>
+                        <script>
+                            document.getElementById("copyEmailBtn").addEventListener("click", function (e) {
+                                e.preventDefault();
+                                const email = "augustinderceville@gmail.com";
+                                navigator.clipboard.writeText(email).then(() => {
+                                    const msg = document.getElementById("copyMsg");
+                                    msg.style.display = "block";
+                                    setTimeout(() => {
+                                        msg.style.display = "none";
+                                    }, 5000);
+                                }).catch(err => {
+                                    alert("Impossible de copier l'adresse email.");
+                                    console.error(err);
+                                });
+                            });
+                        </script>
+                        <p class="card-text"><small class="text-dark-emphasis">Mise à jour • 12/09/2025</small>
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </article>
     <article class="col bg-dark m-3">
-        <div class="mockup-browser border-base-300 border w-full bg-dark-subtle">
-            <div class="mockup-browser-toolbar">
-                <div class="input">https://linkedin.com/augustin-derceville</div>
+        <div class="window flex-1 border rounded-lg overflow-hidden bg-gray-800 h-100">
+            <div class="window-header flex items-center gap-2 bg-gray-700 text-white px-3 py-1">
+                <span class="w-3 h-3 bg-red-500 rounded-full"></span>
+                <span class="w-3 h-3 bg-yellow-500 rounded-full"></span>
+                <span class="w-3 h-3 bg-green-500 rounded-full"></span>
+                <span class="text-center text-dark text-uppercase bg-light rounded position-relative top-50 start-5 my-1 px-3 w-75">https://linkedin.com/augustin-d-erceville</span>
             </div>
-            <div class="grid place-content-center border-t border-base-300 h-80 bg-dark">
-                <div class="card mb-3 bg-dark text-light" style="max-width: 540px;">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src="https://img.icons8.com/?size=100&id=kBCrQMzpQDLQ&format=png&color=000000"
-                                 width="512" height="512" class="img-fluid rounded-start p-3" alt="...">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title text-uppercase">Linkedin</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural
-                                    lead-in to additional content. This content is a little bit longer.</p>
-                                <a href="https://www.linkedin.com/in/augustin-d-erceville-407a24201/"
-                                   class="btn btn-outline-primary" target="_blank">Voir le profils</a>
-                                <p class="card-text"><small class="text-dark-emphasis">Mise à jour • 12/09/2025</small>
-                                </p>
-                            </div>
-                        </div>
+            <div class="row g-0">
+                <div class="col-3">
+                    <img src="https://img.icons8.com/?size=100&id=kBCrQMzpQDLQ&format=png&color=000000"
+                         width="512" height="512" class="img-fluid rounded-start p-3" alt="...">
+                </div>
+                <div class="col">
+                    <div class="card-body p-3 text-light">
+                        <h5 class="card-title text-uppercase">Linkedin</h5>
+                        <p class="card-text">Mon profil professionnel détaillé : expériences, compétences et parcours. Idéal pour les contacts liés au travail et les opportunités de collaboration.</p>
+                        <a href="https://www.linkedin.com/in/augustin-d-erceville-407a24201/"
+                           class="btn btn-outline-primary" target="_blank">Voir le profil</a>
+                        <p class="card-text"><small class="text-dark-emphasis">Mise à jour • 12/09/2025</small>
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </article>
     <article class="col bg-dark m-3">
-        <div class="mockup-browser border-base-300 border w-full bg-dark-subtle">
-            <div class="mockup-browser-toolbar">
-                <div class="input">https://github.com/Augustin-Erceville</div>
+        <div class="window flex-1 border rounded-lg overflow-hidden bg-gray-800 h-100">
+            <div class="window-header flex items-center gap-2 bg-gray-700 text-white px-3 py-1">
+                <span class="w-3 h-3 bg-red-500 rounded-full"></span>
+                <span class="w-3 h-3 bg-yellow-500 rounded-full"></span>
+                <span class="w-3 h-3 bg-green-500 rounded-full"></span>
+                <span class="text-center text-dark text-uppercase bg-light rounded position-relative top-50 start-5 my-1 px-3 w-75">https://github.com/Augustin-Erceville</span>
             </div>
-            <div class="grid place-content-center border-t border-base-300 h-80 bg-dark">
-                <div class="card mb-3 bg-dark text-light" style="max-width: 540px;">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src="https://img.icons8.com/?size=100&id=efFfwotdkiU5&format=png&color=000000"
-                                 width="512" height="512" class="img-fluid rounded-start p-3" alt="...">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title text-uppercase">Github</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural
-                                    lead-in to additional content. This content is a little bit longer.</p>
-                                <a href="https://github.com/Augustin-Erceville" class="btn btn-outline-dark"
-                                   target="_blank">Voir le profils</a>
-                                <p class="card-text"><small class="text-dark-emphasis">Mise à jour • 12/09/2025</small>
-                                </p>
-                            </div>
-                        </div>
+            <div class="row g-0">
+                <div class="col-3">
+                    <img src="https://img.icons8.com/?size=100&id=efFfwotdkiU5&format=png&color=000000"
+                         width="512" height="512" class="img-fluid rounded-start p-3" alt="...">
+                </div>
+                <div class="col">
+                    <div class="card-body p-3 text-light h-100">
+                        <h5 class="card-title text-uppercase">Github</h5>
+                        <p class="card-text">Mon espace de développement où je partage mes projets, mes contributions open-source et mes expérimentations en programmation.</p>
+                        <a href="https://github.com/Augustin-Erceville"
+                           class="btn btn-outline-dark" target="_blank">Voir le profil</a>
+                        <p class="card-text"><small class="text-dark-emphasis">Mise à jour • 12/09/2025</small>
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </article>
 </section>
-<section class="row m-3 ">
+<section class="row m-3">
     <article class="col bg-dark m-3">
-        <div class="mockup-browser border-base-300 border w-full bg-dark-subtle">
-            <div class="mockup-browser-toolbar">
-                <div class="input">https://www.youtube.com/@Mitricum</div>
+        <div class="window flex-1 border rounded-lg overflow-hidden bg-gray-800 h-100">
+            <div class="window-header flex items-center gap-2 bg-gray-700 text-white px-3 py-1">
+                <span class="w-3 h-3 bg-red-500 rounded-full"></span>
+                <span class="w-3 h-3 bg-yellow-500 rounded-full"></span>
+                <span class="w-3 h-3 bg-green-500 rounded-full"></span>
+                <span class="text-center text-dark text-uppercase bg-light rounded position-relative top-50 start-5 my-1 px-3 w-75">https://www.youtube.com/@Mitricum</span>
             </div>
-            <div class="grid place-content-center border-t border-base-300 h-80 bg-dark">
-                <div class="card mb-3 bg-dark text-light" style="max-width: 540px;">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src="https://img.icons8.com/?size=100&id=omVNNE6wkyP7&format=png&color=000000"
-                                 width="512" height="512" class="img-fluid rounded-start p-3" alt="...">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title text-uppercase">Youtube</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural
-                                    lead-in to additional content. This content is a little bit longer.</p>
-                                <a href="https://www.youtube.com/@Mitricum" class="btn btn-outline-danger"
-                                   target="_blank">Voir la chaine</a>
-                                <p class="card-text"><small class="text-dark-emphasis">Mise à jour • 12/09/2025</small>
-                                </p>
-                            </div>
-                        </div>
+            <div class="row g-0">
+                <div class="col-3">
+                    <img src="https://img.icons8.com/?size=100&id=omVNNE6wkyP7&format=png&color=000000"
+                         width="512" height="512" class="img-fluid rounded-start p-3" alt="...">
+                </div>
+                <div class="col">
+                    <div class="card-body p-3 text-light">
+                        <h5 class="card-title text-uppercase">Youtube</h5>
+                        <p class="card-text">Une chaîne où je publiais du contenu. En liens avec ma passion pour les jeux et le montage vidéos.</p>
+                        <a href="https://www.youtube.com/@Mitricum"
+                           class="btn btn-outline-danger" target="_blank">Voir le profil</a>
+                        <p class="card-text"><small class="text-dark-emphasis">Mise à jour • 12/09/2025</small>
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </article>
     <article class="col bg-dark m-3">
-        <div class="mockup-browser border-base-300 border w-full bg-dark-subtle">
-            <div class="mockup-browser-toolbar">
-                <div class="input">https://www.twitch.tv/mitricum_</div>
+        <div class="window flex-1 border rounded-lg overflow-hidden bg-gray-800 h-100">
+            <div class="window-header flex items-center gap-2 bg-gray-700 text-white px-3 py-1">
+                <span class="w-3 h-3 bg-red-500 rounded-full"></span>
+                <span class="w-3 h-3 bg-yellow-500 rounded-full"></span>
+                <span class="w-3 h-3 bg-green-500 rounded-full"></span>
+                <span class="text-center text-dark text-uppercase bg-light rounded position-relative top-50 start-5 my-1 px-3 w-75">https://www.twitch.tv/mitricum_</span>
             </div>
-            <div class="grid place-content-center border-t border-base-300 h-80 bg-dark">
-                <div class="card mb-3 bg-dark text-light" style="max-width: 540px;">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src="https://img.icons8.com/?size=100&id=EE2eQW4V47ek&format=png&color=000000"
-                                 width="512" height="512" class="img-fluid rounded-start p-3" alt="...">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title text-uppercase">Twitch</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural
-                                    lead-in to additional content. This content is a little bit longer.</p>
-                                <a href="https://www.twitch.tv/mitricum_" class="btn btn-outline-primary"
-                                   target="_blank">Voir la chaine</a>
-                                <p class="card-text"><small class="text-dark-emphasis">Mise à jour • 12/09/2025</small>
-                                </p>
-                            </div>
-                        </div>
+            <div class="row g-0">
+                <div class="col-3">
+                    <img src="https://img.icons8.com/?size=100&id=EE2eQW4V47ek&format=png&color=000000"
+                         width="512" height="512" class="img-fluid rounded-start p-3" alt="...">
+                </div>
+                <div class="col">
+                    <div class="card-body p-3 text-light">
+                        <h5 class="card-title text-uppercase">Twitch</h5>
+                        <p class="card-text">Mon profil professionnel détaillé : expériences, compétences et parcours. Idéal pour les contacts liés au travail et les opportunités de collaboration.</p>
+                        <a href="https://www.twitch.tv/mitricum_"
+                           class="btn btn-outline-primary" target="_blank">Voir le profil</a>
+                        <p class="card-text"><small class="text-dark-emphasis">Mise à jour • 12/09/2025</small>
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </article>
     <article class="col bg-dark m-3">
-        <div class="mockup-browser border-base-300 border w-full bg-dark-subtle">
-            <div class="mockup-browser-toolbar">
-                <div class="input">https://discord.gg/vhmkryD7BA</div>
+        <div class="window flex-1 border rounded-lg overflow-hidden bg-gray-800 h-100">
+            <div class="window-header flex items-center gap-2 bg-gray-700 text-white px-3 py-1">
+                <span class="w-3 h-3 bg-red-500 rounded-full"></span>
+                <span class="w-3 h-3 bg-yellow-500 rounded-full"></span>
+                <span class="w-3 h-3 bg-green-500 rounded-full"></span>
+                <span class="text-center text-dark text-uppercase bg-light rounded position-relative top-50 start-5 my-1 px-3 w-75">https://discord.gg/vhmkryD7BA</span>
             </div>
-            <div class="grid place-content-center border-t border-base-300 h-80 bg-dark">
-                <div class="card mb-3 bg-dark text-light" style="max-width: 540px;">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src="https://img.icons8.com/?size=100&id=lRyYU5vFuN82&format=png&color=000000"
-                                 width="512" height="512" class="img-fluid rounded-start p-3" alt="...">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title text-uppercase">Discord</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural
-                                    lead-in to additional content. This content is a little bit longer.</p>
-                                <a href="https://discord.gg/vhmkryD7BA" class="btn btn-outline-primary" target="_blank">Rejoindre</a>
-                                <p class="card-text"><small class="text-dark-emphasis">Mise à jour • 12/09/2025</small>
-                                </p>
-                            </div>
-                        </div>
+            <div class="row g-0">
+                <div class="col-3">
+                    <img src="https://img.icons8.com/?size=100&id=lRyYU5vFuN82&format=png&color=000000"
+                         width="512" height="512" class="img-fluid rounded-start p-3" alt="...">
+                </div>
+                <div class="col">
+                    <div class="card-body p-3 text-light">
+                        <h5 class="card-title text-uppercase">Discord</h5>
+                        <p class="card-text">Un espace communautaire où l’on peut échanger, poser des questions et partager des projets.</p>
+                        <a href="https://discord.gg/vhmkryD7BA"
+                           class="btn btn-outline-primary" target="_blank">Rejoindre</a>
+                        <p class="card-text"><small class="text-dark-emphasis">Mise à jour • 12/09/2025</small>
+                        </p>
                     </div>
                 </div>
             </div>
