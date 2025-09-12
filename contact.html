@@ -68,22 +68,52 @@
 </header>
 <section class="row m-3 ">
     <article class="col bg-dark m-3">
-        <div class="mockup-browser border-base-300 border w-full bg-light">
+        <div class="mockup-browser border-base-300 border w-full bg-dark-subtle">
             <div class="mockup-browser-toolbar">
-                <div class="input">https://mecontacter.com</div>
+                <div class="input">https://portfolio.arce/gmail</div>
             </div>
-            <div class="grid place-content-center border-t border-base-300 h-80">
-                <div class="card mb-3" style="max-width: 540px;">
+            <div class="grid place-content-center border-t border-base-300 h-80 bg-dark">
+                <div class="card mb-3 bg-dark text-light" style="max-width: 540px;">
                     <div class="row g-0">
                         <div class="col-md-4">
-                            <img src="https://img.icons8.com/?size=100&id=Iq5AZypojpBD&format=png&color=000000" width="512" height="512" class="img-fluid rounded-start p-3" alt="...">
+                            <img src="https://img.icons8.com/?size=100&id=Iq5AZypojpBD&format=png&color=000000"
+                                 width="512" height="512"
+                                 class="img-fluid rounded-start p-3"
+                                 alt="Icône Email">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
                                 <h5 class="card-title text-uppercase">Email</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <a href="#" class="btn btn-outline-danger" target="_blank">Contacter</a>
-                                <p class="card-text"><small class="text-body-secondary">Mise à jour • 12/09/2025</small></p>
+                                <p class="card-text">
+                                    This is a wider card with supporting text below as a natural lead-in to additional
+                                    content.
+                                    This content is a little bit longer.
+                                </p>
+                                <a href="" id="copyEmailBtn" class="btn btn-outline-danger">
+                                    Contacter
+                                </a>
+                                <p id="copyMsg" style="display:none; color:limegreen; margin-top:10px;">
+                                    Adresse email copiée !
+                                </p>
+                                <script>
+                                    document.getElementById("copyEmailBtn").addEventListener("click", function (e) {
+                                        e.preventDefault();
+                                        const email = "augustinderceville@gmail.com";
+                                        navigator.clipboard.writeText(email).then(() => {
+                                            const msg = document.getElementById("copyMsg");
+                                            msg.style.display = "block";
+                                            setTimeout(() => {
+                                                msg.style.display = "none";
+                                            }, 5000);
+                                        }).catch(err => {
+                                            alert("Impossible de copier l'adresse email.");
+                                            console.error(err);
+                                        });
+                                    });
+                                </script>
+                                <p class="card-text">
+                                    <small class="text-dark-emphasis">Mise à jour • 12/09/2025</small>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -92,22 +122,26 @@
         </div>
     </article>
     <article class="col bg-dark m-3">
-        <div class="mockup-browser border-base-300 border w-full bg-light">
+        <div class="mockup-browser border-base-300 border w-full bg-dark-subtle">
             <div class="mockup-browser-toolbar">
-                <div class="input">https://daisyui.com</div>
+                <div class="input">https://linkedin.com/augustin-derceville</div>
             </div>
-            <div class="grid place-content-center border-t border-base-300 h-80">
-                <div class="card mb-3" style="max-width: 540px;">
+            <div class="grid place-content-center border-t border-base-300 h-80 bg-dark">
+                <div class="card mb-3 bg-dark text-light" style="max-width: 540px;">
                     <div class="row g-0">
                         <div class="col-md-4">
-                            <img src="https://img.icons8.com/?size=100&id=kBCrQMzpQDLQ&format=png&color=000000" width="512" height="512" class="img-fluid rounded-start p-3" alt="...">
+                            <img src="https://img.icons8.com/?size=100&id=kBCrQMzpQDLQ&format=png&color=000000"
+                                 width="512" height="512" class="img-fluid rounded-start p-3" alt="...">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
                                 <h5 class="card-title text-uppercase">Linkedin</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <a href="#" class="btn btn-outline-primary" target="_blank">Voir le profils</a>
-                                <p class="card-text"><small class="text-body-secondary">Mise à jour • 12/09/2025</small></p>
+                                <p class="card-text">This is a wider card with supporting text below as a natural
+                                    lead-in to additional content. This content is a little bit longer.</p>
+                                <a href="https://www.linkedin.com/in/augustin-d-erceville-407a24201/"
+                                   class="btn btn-outline-primary" target="_blank">Voir le profils</a>
+                                <p class="card-text"><small class="text-dark-emphasis">Mise à jour • 12/09/2025</small>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -116,22 +150,26 @@
         </div>
     </article>
     <article class="col bg-dark m-3">
-        <div class="mockup-browser border-base-300 border w-full bg-light">
+        <div class="mockup-browser border-base-300 border w-full bg-dark-subtle">
             <div class="mockup-browser-toolbar">
-                <div class="input">https://daisyui.com</div>
+                <div class="input">https://github.com/Augustin-Erceville</div>
             </div>
-            <div class="grid place-content-center border-t border-base-300 h-80">
-                <div class="card mb-3" style="max-width: 540px;">
+            <div class="grid place-content-center border-t border-base-300 h-80 bg-dark">
+                <div class="card mb-3 bg-dark text-light" style="max-width: 540px;">
                     <div class="row g-0">
                         <div class="col-md-4">
-                            <img src="https://img.icons8.com/?size=100&id=efFfwotdkiU5&format=png&color=000000" width="512" height="512" class="img-fluid rounded-start p-3" alt="...">
+                            <img src="https://img.icons8.com/?size=100&id=efFfwotdkiU5&format=png&color=000000"
+                                 width="512" height="512" class="img-fluid rounded-start p-3" alt="...">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
                                 <h5 class="card-title text-uppercase">Github</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <a href="#" class="btn btn-outline-dark" target="_blank">Voir le profils</a>
-                                <p class="card-text"><small class="text-body-secondary">Mise à jour • 12/09/2025</small></p>
+                                <p class="card-text">This is a wider card with supporting text below as a natural
+                                    lead-in to additional content. This content is a little bit longer.</p>
+                                <a href="https://github.com/Augustin-Erceville" class="btn btn-outline-dark"
+                                   target="_blank">Voir le profils</a>
+                                <p class="card-text"><small class="text-dark-emphasis">Mise à jour • 12/09/2025</small>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -142,22 +180,26 @@
 </section>
 <section class="row m-3 ">
     <article class="col bg-dark m-3">
-        <div class="mockup-browser border-base-300 border w-full bg-light">
+        <div class="mockup-browser border-base-300 border w-full bg-dark-subtle">
             <div class="mockup-browser-toolbar">
-                <div class="input">https://daisyui.com</div>
+                <div class="input">https://www.youtube.com/@Mitricum</div>
             </div>
-            <div class="grid place-content-center border-t border-base-300 h-80">
-                <div class="card mb-3" style="max-width: 540px;">
+            <div class="grid place-content-center border-t border-base-300 h-80 bg-dark">
+                <div class="card mb-3 bg-dark text-light" style="max-width: 540px;">
                     <div class="row g-0">
                         <div class="col-md-4">
-                            <img src="https://img.icons8.com/?size=100&id=omVNNE6wkyP7&format=png&color=000000" width="512" height="512" class="img-fluid rounded-start p-3" alt="...">
+                            <img src="https://img.icons8.com/?size=100&id=omVNNE6wkyP7&format=png&color=000000"
+                                 width="512" height="512" class="img-fluid rounded-start p-3" alt="...">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
                                 <h5 class="card-title text-uppercase">Youtube</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <a href="#" class="btn btn-outline-danger" target="_blank">Voir la chaine</a>
-                                <p class="card-text"><small class="text-body-secondary">Mise à jour • 12/09/2025</small></p>
+                                <p class="card-text">This is a wider card with supporting text below as a natural
+                                    lead-in to additional content. This content is a little bit longer.</p>
+                                <a href="https://www.youtube.com/@Mitricum" class="btn btn-outline-danger"
+                                   target="_blank">Voir la chaine</a>
+                                <p class="card-text"><small class="text-dark-emphasis">Mise à jour • 12/09/2025</small>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -166,22 +208,26 @@
         </div>
     </article>
     <article class="col bg-dark m-3">
-        <div class="mockup-browser border-base-300 border w-full bg-light">
+        <div class="mockup-browser border-base-300 border w-full bg-dark-subtle">
             <div class="mockup-browser-toolbar">
-                <div class="input">https://daisyui.com</div>
+                <div class="input">https://www.twitch.tv/mitricum_</div>
             </div>
-            <div class="grid place-content-center border-t border-base-300 h-80">
-                <div class="card mb-3" style="max-width: 540px;">
+            <div class="grid place-content-center border-t border-base-300 h-80 bg-dark">
+                <div class="card mb-3 bg-dark text-light" style="max-width: 540px;">
                     <div class="row g-0">
                         <div class="col-md-4">
-                            <img src="https://img.icons8.com/?size=100&id=EE2eQW4V47ek&format=png&color=000000" width="512" height="512" class="img-fluid rounded-start p-3" alt="...">
+                            <img src="https://img.icons8.com/?size=100&id=EE2eQW4V47ek&format=png&color=000000"
+                                 width="512" height="512" class="img-fluid rounded-start p-3" alt="...">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
                                 <h5 class="card-title text-uppercase">Twitch</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <a href="#" class="btn btn-outline-primary" target="_blank">Voir la chaine</a>
-                                <p class="card-text"><small class="text-body-secondary">Mise à jour • 12/09/2025</small></p>
+                                <p class="card-text">This is a wider card with supporting text below as a natural
+                                    lead-in to additional content. This content is a little bit longer.</p>
+                                <a href="https://www.twitch.tv/mitricum_" class="btn btn-outline-primary"
+                                   target="_blank">Voir la chaine</a>
+                                <p class="card-text"><small class="text-dark-emphasis">Mise à jour • 12/09/2025</small>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -190,22 +236,25 @@
         </div>
     </article>
     <article class="col bg-dark m-3">
-        <div class="mockup-browser border-base-300 border w-full bg-light">
+        <div class="mockup-browser border-base-300 border w-full bg-dark-subtle">
             <div class="mockup-browser-toolbar">
-                <div class="input">https://daisyui.com</div>
+                <div class="input">https://discord.gg/vhmkryD7BA</div>
             </div>
-            <div class="grid place-content-center border-t border-base-300 h-80">
-                <div class="card mb-3" style="max-width: 540px;">
+            <div class="grid place-content-center border-t border-base-300 h-80 bg-dark">
+                <div class="card mb-3 bg-dark text-light" style="max-width: 540px;">
                     <div class="row g-0">
                         <div class="col-md-4">
-                            <img src="https://img.icons8.com/?size=100&id=lRyYU5vFuN82&format=png&color=000000" width="512" height="512" class="img-fluid rounded-start p-3" alt="...">
+                            <img src="https://img.icons8.com/?size=100&id=lRyYU5vFuN82&format=png&color=000000"
+                                 width="512" height="512" class="img-fluid rounded-start p-3" alt="...">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
                                 <h5 class="card-title text-uppercase">Discord</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <a href="#" class="btn btn-outline-primary" target="_blank">Rejoindre</a>
-                                <p class="card-text"><small class="text-body-secondary">Mise à jour • 12/09/2025</small></p>
+                                <p class="card-text">This is a wider card with supporting text below as a natural
+                                    lead-in to additional content. This content is a little bit longer.</p>
+                                <a href="https://discord.gg/vhmkryD7BA" class="btn btn-outline-primary" target="_blank">Rejoindre</a>
+                                <p class="card-text"><small class="text-dark-emphasis">Mise à jour • 12/09/2025</small>
+                                </p>
                             </div>
                         </div>
                     </div>
