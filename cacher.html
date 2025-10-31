@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mitri — Portfolio (Console / Neon)</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* === Palette Terminal Néon (variables prêtes à modifier) === */
+        :root{
+            --bg: #070A0C;      /* fond */
+            --panel: #0B1314;   /* cartes / panneaux */
+            --accent: #39FF14;  /* accent néon principal */
+            --accent-2: #8CFF7C;/* accent secondaire */
+            --text: #E6FFF0;    /* texte principal */
+            --muted: #7F8C8D;   /* texte secondaire */
+            --danger: #FF6159;  /* erreurs */
+            --glass: rgba(255,255,255,0.03);
+        }
+
+        html,body{height:100%;font-family:"Roboto Mono", monospace;background: radial-gradient(ellipse at 20% 10%, rgba(57,255,20,0.02), transparent 10%), linear-gradient(180deg,#020405 0%, #061018 100%);color:var(--text);}
+
+        /* Navbar */
+        .navbar{background: linear-gradient(90deg, rgba(255,255,255,0.02), transparent);border-bottom:1px solid rgba(255,255,255,0.03);}
+        .nav-link{color:var(--muted) !important;font-weight:500}
+        .nav-link:hover{color:var(--accent) !important}
+
+        /* Terminal look */
+        .terminal{background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));border-radius:10px;padding:1rem;border:1px solid rgba(57,255,20,0.06);box-shadow:0 8px 30px rgba(3,6,8,0.6)}
+        .terminal-header{display:flex;align-items:center;gap:.5rem;margin-bottom:.6rem}
+        .dot{width:10px;height:10px;border-radius:50%;box-shadow:0 0 8px rgba(0,0,0,0.6) inset}
+        .dot.red{background:#ff6b6b}
+        .dot.yellow{background:#ffd166}
+        .dot.green{background:#8cf174}
+        .prompt{color:var(--accent);font-weight:700}
+        .console-output{font-size:.95rem;color:#b6f7b9;min-height:78px;white-space:pre-wrap;line-height:1.5}
+        .cursor{display:inline-block;width:10px;height:1.1em;background:var(--accent);margin-left:6px;vertical-align:middle;animation:blink 1s steps(2,start) infinite}
+        @keyframes blink{50%{opacity:0}}
+
+        /* Reveal */
+        .reveal{opacity:0;transform:translateY(12px) scale(.995);transition:all .6s cubic-bezier(.2,.9,.3,1)}
+        .reveal.visible{opacity:1;transform:none}
+
+        /* Cards */
+        .project-card{background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));border:1px solid rgba(57,255,20,0.04);transition:transform .25s ease,box-shadow .25s ease;border-radius:10px;padding:1rem}
+        .project-card:hover{transform:translateY(-8px) scale(1.01);box-shadow:0 12px 30px rgba(57,255,20,0.06)}
+        .badge-accent{background:rgba(57,255,20,0.07);color:var(--accent);border:1px solid rgba(57,255,20,0.06)}
+
+        h1,h2,h3{color:#e6fff0;text-shadow:0 0 6px rgba(57,255,20,0.06)}
+        .muted{color:var(--muted);font-weight:500}
+
+        .chip{display:inline-block;padding:.3rem .6rem;margin:.2rem;border-radius:6px;border:1px solid rgba(255,255,255,0.03);background:rgba(255,255,255,0.01);font-size:.9rem}
+
+        footer{margin-top:3rem;padding:2rem 0;border-top:1px solid rgba(255,255,255,0.02);color:var(--muted)}
+
+        /* project image placeholder */
+        .project-hero{height:140px;background:linear-gradient(135deg, rgba(57,255,20,0.02), rgba(57,255,20,0.01));border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:.95rem}
+
+        @media (max-width:576px){.console-output{font-size:.88rem}}
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+        <a class="navbar-brand text-white fw-bold" href="#">Mitri<span class="text-muted">_</span></a>
+        <button class="navbar-toggler btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navmenu">
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#projects">Projets</a></li>
+                <li class="nav-item"><a class="nav-link" href="#skills">Compétences</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<header class="py-5">
+    <div class="container">
+        <div class="row align-items-center gy-4">
+            <div class="col-lg-7">
+                <div class="terminal">
+                    <div class="terminal-header">
+                        <div class="dot red"></div>
+                        <div class="dot yellow"></div>
+                        <div class="dot green"></div>
+                        <div class="ms-auto muted small">C:\\Users\\Mitri\\portfolio&gt;</div>
+                    </div>
+
+                    <div class="console-output" id="consoleOutput" aria-live="polite">
+                        <span class="prompt">C:\\Users\\Mitri&gt;</span>
+                        <span id="typedText" aria-hidden="true"></span><span class="cursor" id="cursor"></span>
+                    </div>
+
+                    <div class="mt-3 d-flex gap-2">
+                        <button class="btn btn-outline-success btn-sm" data-bs-toggle="modal" data-bs-target="#addProjectModal"><i class="bi bi-plus-circle"></i> Ajouter projet</button>
+                        <a href="#projects" class="btn btn-success btn-sm"><i class="bi bi-folder2-open"></i> Voir projets</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-5">
+                <h1 class="mb-2">Salut — Je suis <span class="text-success">Mitri</span></h1>
+                <p class="muted">Développeur full-stack, j'aime coder proprement, automatiser et créer des interfaces claires.</p>
+                <div class="mt-3">
+                    <span class="chip">#JavaScript</span>
+                    <span class="chip">#PHP</span>
+                    <span class="chip">#SQL</span>
+                    <span class="chip">#DiscordBots</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main class="pb-5">
+    <section id="about" class="py-4">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-6 reveal">
+                    <h2>À propos</h2>
+                    <p class="muted">Je crée des applications web, bots et outils. J'aime le code lisible, l'automatisation et les interfaces minimalistes.</p>
+                </div>
+
+                <div class="col-md-6 reveal">
+                    <h2>Expériences récentes</h2>
+                    <div class="d-grid gap-2">
+                        <div class="project-card">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div>
+                                    <h5 class="mb-1">Logging system — Discord</h5>
+                                    <small class="muted">Bot & automatisation</small>
+                                </div>
+                                <span class="badge badge-accent">Node.js</span>
+                            </div>
+                            <p class="muted small mt-2 mb-0">Conception d’un système de logs complet (77+ events), mapping d’emojis, dashboard d’administration.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="py-5">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2>Projets</h2>
+                <div class="muted small">Sélection — interactif</div>
+            </div>
+
+            <div class="row" id="projectsGrid">
+                <!-- cards rendered here -->
+            </div>
+
+            <div class="mt-4 muted small">
+                <!-- Template snippet for manual editing (visible on the page for convenience) -->
+                <strong>Template objet projet (copy/paste dans le tableau JS) :</strong>
+                <pre style="background:var(--panel);padding:.6rem;border-radius:6px;color:var(--muted);font-size:.82rem">{
+  id: 'proj-slug',
+  title: 'Titre du projet',
+  date: '2025-10',
+  description: 'Courte description, 140–220 caractères.',
+  image: '', // url ou vide
+  tags: ['PHP','MySQL'],
+  repo: 'https://github.com/...',
+  live: '',
+  status: 'En développement' // Ex: 'Terminé','Prototype','En dev'
+}</pre>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-5 reveal">
+        <div class="container">
+            <h2>Compétences</h2>
+            <p class="muted">Outils et stacks que j'utilise souvent.</p>
+            <div class="mt-3">
+                <span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">Bootstrap</span>
+                <span class="chip">JavaScript</span><span class="chip">Node.js</span><span class="chip">PHP</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-5 reveal">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>Contact</h2>
+                    <p class="muted">Tu veux bosser ensemble ? Envoie un message.</p>
+
+                    <form id="contactForm" class="mt-3">
+                        <div class="mb-2"><label class="form-label small">Nom</label><input class="form-control form-control-sm" type="text" required placeholder="Ton nom"></div>
+                        <div class="mb-2"><label class="form-label small">Email</label><input class="form-control form-control-sm" type="email" required placeholder="ton@mail.com"></div>
+                        <div class="mb-2"><label class="form-label small">Message</label><textarea class="form-control form-control-sm" rows="4" placeholder="Salut..." required></textarea></div>
+                        <button class="btn btn-success btn-sm" type="submit"><i class="bi bi-send-fill"></i> Envoyer</button>
+                    </form>
+
+                </div>
+
+                <div class="col-md-6">
+                    <h5>Réseaux</h5>
+                    <p class="muted">Liens & profils</p>
+                    <ul class="list-unstyled muted">
+                        <li><i class="bi bi-github"></i> GitHub: <a href="#" class="text-decoration-underline">github.com/mitri</a></li>
+                        <li><i class="bi bi-discord"></i> Discord: <span class="muted">mitricum#1234</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="text-center">
+    <div class="container">
+        <small>&copy; <span id="year"></span> Mitri — Portfolio Console Neon.</small>
+    </div>
+</footer>
+
+<!-- Add Project Modal (client-side demo / local only) -->
+<div class="modal fade" id="addProjectModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content" style="background:var(--panel);border:1px solid rgba(255,255,255,0.03)">
+            <div class="modal-header">
+                <h5 class="modal-title">Ajouter un projet (local)</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form id="addProjectForm">
+                <div class="modal-body">
+                    <div class="row g-2">
+                        <div class="col-md-6"><input class="form-control form-control-sm" name="title" placeholder="Titre" required></div>
+                        <div class="col-md-6"><input class="form-control form-control-sm" name="date" placeholder="2025-10" ></div>
+                        <div class="col-12"><input class="form-control form-control-sm" name="image" placeholder="Image URL (option)"></div>
+                        <div class="col-12"><input class="form-control form-control-sm" name="repo" placeholder="Repo URL (option)"></div>
+                        <div class="col-12"><input class="form-control form-control-sm" name="live" placeholder="Live URL (option)"></div>
+                        <div class="col-12"><input class="form-control form-control-sm" name="tags" placeholder="Tags comma-separated (ex: PHP,MySQL)"></div>
+                        <div class="col-12"><textarea class="form-control form-control-sm" name="description" rows="3" placeholder="Courte description (140-220 chars)" required></textarea></div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Annuler</button>
+                    <button type="submit" class="btn btn-success btn-sm">Ajouter</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap Bundle JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    // Typing animation
+    const phrases = ["portfolio --open","cat about.md","git status","npm run build"];
+    const typed = document.getElementById('typedText');
+    let pIndex=0,cIndex=0,deleting=false;
+    function typeLoop(){
+        const full=phrases[pIndex];
+        if(!deleting){ typed.textContent = full.slice(0,cIndex+1); cIndex++; if(cIndex===full.length){deleting=true;setTimeout(typeLoop,900);return} setTimeout(typeLoop,60+Math.random()*80);
+        } else { typed.textContent = full.slice(0,cIndex-1); cIndex--; if(cIndex===0){deleting=false;pIndex=(pIndex+1)%phrases.length;setTimeout(typeLoop,300);return} setTimeout(typeLoop,30+Math.random()*30);} }
+    typeLoop();
+
+    // Reveal on scroll
+    const reveals = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver(entries=>{entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible'); })},{threshold:.12});
+    reveals.forEach(r=>io.observe(r));
+
+    // === Projects: edit this array to add static entries. ===
+    // You can also use the "Ajouter un projet" modal (client-side only, not persistent).
+    const projects = [
+        {
+            id: 'logsystem-discord',
+            title: 'LogSystem — Discord',
+            date: '2025-07',
+            description: 'Système de logs complet pour serveur Discord (77+ events). Mapping emojis, dashboard d\'admin.',
+            image: '',
+            tags: ['Node.js','Discord API','Bot'],
+            repo: '',
+            live: '',
+            status: 'Terminé'
+        },
+        {
+            id: 'slime-wiki',
+            title: 'Wiki Slime Rancher (template)',
+            date: '2025-03',
+            description: 'Base en PHP + MySQL pour contenu thématique, UI admin et imports/export.',
+            image: '',
+            tags: ['PHP','MySQL','shadcn/ui'],
+            repo: '',
+            live: '',
+            status: 'Prototype'
+        }
+    ];
+
+    // Helper: sanitize / create slug
+    function slugify(s){return String(s).toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'');}
+
+    // Render projects
+    const grid = document.getElementById('projectsGrid');
+    function renderProjects(){
+        grid.innerHTML='';
+        projects.forEach(p=>{
+            const col = document.createElement('div'); col.className='col-md-4 mb-3 reveal';
+            col.innerHTML = `
+          <div class="project-card h-100 d-flex flex-column">
+            <div class="project-hero">${p.image? `<img src="${p.image}" alt="${p.title}" style="max-height:120px;max-width:100%;border-radius:6px;object-fit:cover">` : '<i class="bi bi-file-earmark-code" style="font-size:1.6rem;color:var(--muted)"></i>'}</div>
+            <div class="mt-3">
+              <h5 class="mb-1">${p.title}</h5>
+              <small class="muted">${p.date} — <span class="text-success">${p.status}</span></small>
+              <p class="muted small mt-2">${p.description}</p>
+            </div>
+            <div class="mt-auto d-flex justify-content-between align-items-center">
+              <div>${p.tags.map(t=>`<span class="badge bg-transparent text-white small me-1" style="border:1px solid rgba(255,255,255,0.03)">${t}</span>`).join('')}</div>
+              <div class="d-flex gap-1">${p.repo? `<a href="${p.repo}" target="_blank" class="btn btn-sm btn-outline-success" title="Repo"><i class="bi bi-github"></i></a>` : ''}${p.live? `<a href="${p.live}" target="_blank" class="btn btn-sm btn-outline-success" title="Live"><i class="bi bi-box-arrow-up-right"></i></a>` : ''}<button class="btn btn-sm btn-outline-secondary" onclick="editProject('${p.id}')" title="Edit">✎</button></div>
+            </div>
+          </div>
+        `;
+            grid.appendChild(col);
+            io.observe(col);
+        });
+    }
+    renderProjects();
+
+    // Add project via modal (client-side only)
+    const addForm = document.getElementById('addProjectForm');
+    addForm.addEventListener('submit', e=>{
+        e.preventDefault();
+        const fd = new FormData(addForm);
+        const title = fd.get('title').trim();
+        const project = {
+            id: slugify(title) + '-' + Date.now().toString().slice(-4),
+            title,
+            date: fd.get('date') || new Date().toISOString().slice(0,7),
+            description: fd.get('description').trim(),
+            image: fd.get('image').trim(),
+            tags: fd.get('tags') ? fd.get('tags').split(',').map(t=>t.trim()).filter(Boolean) : [],
+            repo: fd.get('repo').trim(),
+            live: fd.get('live').trim(),
+            status: 'Prototype'
+        };
+        projects.unshift(project); // add to top
+        renderProjects();
+        const modalEl = document.getElementById('addProjectModal');
+        const modal = bootstrap.Modal.getInstance(modalEl);
+        modal.hide();
+        addForm.reset();
+    });
+
+    // Simple edit: find project and populate modal for quick edit (client-side)
+    function editProject(id){
+        const p = projects.find(x=>x.id===id);
+        if(!p) return alert('Projet introuvable');
+        // populate modal
+        const modalEl = document.getElementById('addProjectModal');
+        modalEl.querySelector('[name="title"]').value = p.title;
+        modalEl.querySelector('[name="date"]').value = p.date;
+        modalEl.querySelector('[name="image"]').value = p.image;
+        modalEl.querySelector('[name="repo"]').value = p.repo;
+        modalEl.querySelector('[name="live"]').value = p.live;
+        modalEl.querySelector('[name="tags"]').value = p.tags.join(',');
+        modalEl.querySelector('[name="description"]').value = p.description;
+
+        // change submit behavior temporarily
+        const submit = addForm.querySelector('button[type="submit"]');
+        const originalHandler = addForm.onsubmit;
+
+        function saveEdit(e){
+            e.preventDefault();
+            const fd = new FormData(addForm);
+            p.title = fd.get('title').trim();
+            p.date = fd.get('date') || p.date;
+            p.description = fd.get('description').trim();
+            p.image = fd.get('image').trim();
+            p.tags = fd.get('tags') ? fd.get('tags').split(',').map(t=>t.trim()).filter(Boolean) : [];
+            p.repo = fd.get('repo').trim();
+            p.live = fd.get('live').trim();
+            renderProjects();
+            bootstrap.Modal.getInstance(modalEl).hide();
+            addForm.removeEventListener('submit', saveEdit);
+            addForm.addEventListener('submit', addFormHandler);
+            addForm.reset();
+        }
+
+        // swap handlers
+        addForm.removeEventListener('submit', addFormHandler);
+        addForm.addEventListener('submit', saveEdit);
+        const modal = new bootstrap.Modal(modalEl);
+        modal.show();
+
+        // restore default handler when modal hidden
+        modalEl.addEventListener('hidden.bs.modal', ()=>{
+            addForm.removeEventListener('submit', saveEdit);
+            addForm.addEventListener('submit', addFormHandler);
+            addForm.reset();
+        }, {once:true});
+    }
+
+    // keep a reference to default addForm handler so edit can swap easily
+    function addFormHandler(e){ /* placeholder - actual handler attached earlier */ }
+
+    // contact form simulation
+    document.getElementById('contactForm').addEventListener('submit', e=>{ e.preventDefault(); alert('Formulaire simulé — implémentez fetch / mailer pour envoyer réellement.'); e.target.reset(); });
+
+    // footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+</script>
+</body>
+</html>
