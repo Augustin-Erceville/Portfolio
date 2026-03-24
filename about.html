@@ -101,19 +101,21 @@
 </section>
 <section class="container mx-auto m-3">
     <div class="d-grid gap-2">
-        <button class="btn btn-primary" type="button" onclick="openAndDownloadPDF()">
+        <button class="btn btn-primary" type="button" onclick="openAndDownloadPDF('Files/CV.pdf', 'CV.pdf')">
             Voir le CV
+        </button>
+        <button class="btn btn-secondary" type="button" onclick="openAndDownloadPDF('Files/Tableau2Synthese.pdf', 'Tableau2Synthese.pdf')">
+            Voir le tableau de synthèse E5
         </button>
     </div>
 </section>
-
 <script>
-    function openAndDownloadPDF() {
-        window.open("Files/CV.pdf", "_blank");
+    function openAndDownloadPDF(path, filename) {
+        window.open(path, "_blank");
 
         const link = document.createElement("a");
-        link.href = "Files/CV.pdf";
-        link.download = "CV.pdf";
+        link.href = path;
+        link.download = filename;
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
