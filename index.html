@@ -256,7 +256,6 @@
             50% { transform: translateY(5px); }
         }
 
-        /* Stagger entrance */
         .fade-up {
             opacity: 0;
             transform: translateY(20px);
@@ -289,10 +288,9 @@
 </head>
 <body>
 
-<!-- Navigation -->
 <nav class="pf-nav">
     <a href="index.html" class="pf-nav__brand">
-        <span class="monogram">AE</span>
+        <img src="Files/Logo.png" alt="Logo" style="width:30px;height:30px;border-radius:var(--radius-sm);border:1px solid var(--border);">
         <span>Augustin<span class="pf-nav__sep"> /</span> Portfolio</span>
     </a>
     <ul class="pf-nav__links" id="navLinks">
@@ -307,12 +305,10 @@
     <button class="pf-nav__toggle" id="navToggle" aria-label="Menu">☰</button>
 </nav>
 
-<!-- Hero -->
 <section class="hero">
     <div class="hero__bg-text">AERCE</div>
 
     <div class="hero__inner">
-        <!-- Left -->
         <div class="hero__left">
             <div class="status-pill fade-up fade-up-d1" style="margin-bottom:1.25rem">
                 <span class="status-pill__dot"></span>
@@ -365,7 +361,6 @@
             </div>
         </div>
 
-        <!-- Right: Terminal -->
         <div class="hero__right fade-up fade-up-d3">
             <div class="hero__terminal">
                 <div class="terminal__bar">
@@ -406,7 +401,6 @@
         </div>
     </div>
 
-    <!-- Scroll indicator -->
     <div class="hero__scroll">
         <svg width="16" height="20" viewBox="0 0 16 20" fill="none">
             <rect x="1" y="1" width="14" height="18" rx="7" stroke="currentColor" stroke-opacity="0.3" stroke-width="1.5"/>
@@ -423,7 +417,6 @@
 </footer>
 
 <script>
-    // Mobile nav
     const toggle = document.getElementById('navToggle');
     const links  = document.getElementById('navLinks');
     toggle.addEventListener('click', () => links.classList.toggle('open'));
