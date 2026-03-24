@@ -1,246 +1,359 @@
 <!doctype html>
-<html lang="fr" class="bg-dark">
+<html lang="fr">
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-          rel="stylesheet"
-          integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-          crossorigin="anonymous">
-
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet"/>
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet"/>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
-          rel="stylesheet">
+    <title>Diplômes — Augustin d'Erceville</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Progress timeline */
+        .cert-timeline {
+            display: flex;
+            align-items: center;
+            gap: 0;
+            margin-bottom: 3.5rem;
+            position: relative;
+            padding: 2rem 0;
+        }
 
-    <title>Portfolio - Diplômes</title>
+        .cert-step {
+            flex: 1;
+            text-align: center;
+            position: relative;
+            cursor: default;
+        }
+
+        .cert-step::before {
+            content: '';
+            position: absolute;
+            top: 22px;
+            left: 50%;
+            right: -50%;
+            height: 2px;
+            background: var(--border);
+            z-index: 0;
+        }
+
+        .cert-step:last-child::before { display: none; }
+
+        .cert-step__dot {
+            width: 44px; height: 44px;
+            border-radius: 50%;
+            background: var(--bg-2);
+            border: 2px solid var(--border-2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 0.625rem;
+            position: relative;
+            z-index: 1;
+            font-size: 1.1rem;
+            transition: border-color 0.2s, transform 0.2s;
+        }
+
+        .cert-step:hover .cert-step__dot {
+            border-color: var(--accent);
+            transform: scale(1.1);
+        }
+
+        .cert-step--done .cert-step__dot {
+            border-color: var(--accent);
+            background: var(--accent-low);
+        }
+
+        .cert-step--future .cert-step__dot {
+            border-color: var(--border);
+            opacity: 0.6;
+        }
+
+        .cert-step__year {
+            font-size: 0.72rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 0.2rem;
+        }
+
+        .cert-step__name {
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--text);
+            max-width: 90px;
+            margin: 0 auto;
+            line-height: 1.3;
+        }
+
+        .cert-step--future .cert-step__year,
+        .cert-step--future .cert-step__name {
+            color: var(--text-3);
+        }
+
+        /* Connected line between done steps */
+        .cert-step--done::before { background: rgba(200, 255, 87, 0.25); }
+
+        /* Grid of cert cards */
+        .cert-cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.25rem;
+        }
+
+        .cert-card {
+            background: var(--bg-2);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            position: relative;
+            overflow: hidden;
+            transition: border-color 0.25s var(--ease), transform 0.25s var(--ease);
+        }
+
+        .cert-card:hover {
+            border-color: var(--border-2);
+            transform: translateY(-4px);
+        }
+
+        .cert-card--accent { border-top: 3px solid var(--accent); }
+        .cert-card--blue   { border-top: 3px solid #89CFEF; }
+        .cert-card--orange { border-top: 3px solid #FEBC2E; }
+        .cert-card--purple { border-top: 3px solid #C084FC; }
+
+        .cert-card__bg-year {
+            position: absolute;
+            right: 1rem; bottom: -0.75rem;
+            font-family: 'Syne', sans-serif;
+            font-size: 4rem;
+            font-weight: 800;
+            color: var(--bg-3);
+            line-height: 1;
+            pointer-events: none;
+            transition: color 0.25s;
+            letter-spacing: -0.04em;
+        }
+
+        .cert-card:hover .cert-card__bg-year { color: var(--border); }
+
+        .cert-card__label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-3);
+            margin-bottom: 0.5rem;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .cert-card__name {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            line-height: 1.2;
+        }
+
+        .cert-card__detail {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+
+        .cert-detail-row {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.845rem;
+            color: var(--text-2);
+        }
+
+        .cert-detail-row span:first-child { font-size: 0.9rem; }
+
+        .cert-card--future {
+            opacity: 0.6;
+        }
+
+        .cert-card--future .cert-card__name::after {
+            content: ' (en cours)';
+            font-size: 0.75rem;
+            color: var(--accent);
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 400;
+        }
+
+        @media (max-width: 600px) {
+            .cert-cards { grid-template-columns: 1fr; }
+            .cert-timeline { overflow-x: auto; padding-bottom: 0.5rem; }
+            .cert-step__name { font-size: 0.7rem; }
+        }
+    </style>
 </head>
-<body class="bg-dark" style="font-family: 'JetBrains Mono', monospace;">
+<body>
 
-<header class="navbar bg-dark border-bottom border-body">
-    <div class="container-fluid fs-3">
-        <a class="navbar-brand fs-3 text-light" href="index.html">
-            <img src="Files/Logo.png" alt="Logo" width="48" height="48" class="d-inline-block align-text-center">
-            Diplômes et formations
-        </a>
-        <nav>
-            <ul class="nav justify-content-end nav-pills">
-                <li class="nav-item">
-                    <a class="nav-link fw-medium text-light" href="index.html"
-                       data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-placement="bottom"
-                       data-bs-content="Accueil" data-bs-custom-class="popup-header">🏠</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link fw-light text-body" href="projects.html"
-                       data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-placement="bottom"
-                       data-bs-content="Mes Projets" data-bs-custom-class="popup-header">💻</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link fw-light text-body" href="experience.html"
-                       data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-placement="bottom"
-                       data-bs-content="Expériences professionnelles" data-bs-custom-class="popup-header">📄</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link fw-light text-body" href="skills.html"
-                       data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-placement="bottom"
-                       data-bs-content="Compétences techniques" data-bs-custom-class="popup-header">🛠️</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active fw-light text-body" href="certificates.html"
-                       data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-placement="bottom"
-                       data-bs-content="Diplômes et formations" data-bs-custom-class="popup-header">🎓</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link fw-light text-body" href="contact.html"
-                       data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-placement="bottom"
-                       data-bs-content="Me Contacter" data-bs-custom-class="popup-header">📧</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link fw-light text-body" href="about.html"
-                       data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-placement="bottom"
-                       data-bs-content="À propos" data-bs-custom-class="popup-header">👤</a>
-                </li>
-            </ul>
-        </nav>
-    </div>
-</header>
-<section class="row bg-dark text-white m-3">
-    <article class="col bg-dark m-3">
-        <div class="window flex-1 border rounded-lg overflow-hidden bg-gray-800">
-            <div class="window-header flex items-center gap-2 bg-gray-700 text-white px-3 py-1">
-                <span class="w-3 h-3 bg-red-500 rounded-full"></span>
-                <span class="w-3 h-3 bg-yellow-500 rounded-full"></span>
-                <span class="w-3 h-3 bg-green-500 rounded-full"></span>
-                <span class="text-center text-dark text-uppercase bg-light rounded position-relative top-50 start-5 my-1 px-3 w-75">https://portfolio/chronologie</span>
+<nav class="pf-nav">
+    <a href="index.html" class="pf-nav__brand">
+        <span class="monogram">AE</span>
+        <span>Augustin<span class="pf-nav__sep"> /</span> Portfolio</span>
+    </a>
+    <ul class="pf-nav__links" id="navLinks">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="about.html">À propos</a></li>
+        <li><a href="projects.html">Projets</a></li>
+        <li><a href="experience.html">Expériences</a></li>
+        <li><a href="skills.html">Compétences</a></li>
+        <li><a href="certificates.html" class="active">Diplômes</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="pf-nav__toggle" id="navToggle">☰</button>
+</nav>
+
+<main class="pf-page">
+    <section class="py-section">
+        <div class="container">
+
+            <!-- Header -->
+            <div class="mb-lg reveal">
+                <div class="section-label">Diplômes & Formations</div>
+                <h1 class="section-title">Parcours académique</h1>
+                <p class="section-sub">De la scolarité générale à la spécialisation en développement logiciel.</p>
             </div>
-            <div class="window-content flex items-center justify-center p-6">
-                <ul class="timeline">
-                    <li>
-                        <div class="timeline-start">2016</div>
-                        <div class="timeline-middle">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
-                                 fill="currentColor" class="h-5 w-5">
-                                <path fill-rule="evenodd"
-                                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809
-                                         a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88
-                                         a.75.75 0 10-1.06 1.061l2.5 2.5
-                                         a.75.75 0 001.137-.089l4-5.5z"
-                                      clip-rule="evenodd"/>
-                            </svg>
+
+            <!-- Progress timeline -->
+            <div class="pf-window reveal reveal-d1 mb-lg">
+                <div class="pf-window__bar">
+                    <div class="pf-window__dot pf-window__dot--r"></div>
+                    <div class="pf-window__dot pf-window__dot--y"></div>
+                    <div class="pf-window__dot pf-window__dot--g"></div>
+                    <span class="pf-window__url">portfolio/chronologie</span>
+                </div>
+                <div class="pf-window__body">
+                    <div class="cert-timeline">
+                        <div class="cert-step cert-step--done">
+                            <div class="cert-step__dot">🏫</div>
+                            <div class="cert-step__year">2016</div>
+                            <div class="cert-step__name">Brevet des collèges</div>
                         </div>
-                        <div class="timeline-end bg-dark timeline-box">Brevet des collège</div>
-                        <hr/>
-                    </li>
-                    <li>
-                        <hr/>
-                        <div class="timeline-start">2019</div>
-                        <div class="timeline-middle">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
-                                 fill="currentColor" class="h-5 w-5">
-                                <path fill-rule="evenodd"
-                                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809
-                                         a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88
-                                         a.75.75 0 10-1.06 1.061l2.5 2.5
-                                         a.75.75 0 001.137-.089l4-5.5z"
-                                      clip-rule="evenodd"/>
-                            </svg>
+                        <div class="cert-step cert-step--done">
+                            <div class="cert-step__dot">🎓</div>
+                            <div class="cert-step__year">2019</div>
+                            <div class="cert-step__name">Baccalauréat</div>
                         </div>
-                        <div class="timeline-end bg-dark timeline-box">Baccalauréat</div>
-                        <hr/>
-                    </li>
-                    <li>
-                        <hr/>
-                        <div class="timeline-start">2021</div>
-                        <div class="timeline-middle">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
-                                 fill="currentColor" class="h-5 w-5">
-                                <path fill-rule="evenodd"
-                                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809
-                                         a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88
-                                         a.75.75 0 10-1.06 1.061l2.5 2.5
-                                         a.75.75 0 001.137-.089l4-5.5z"
-                                      clip-rule="evenodd"/>
-                            </svg>
+                        <div class="cert-step cert-step--done">
+                            <div class="cert-step__dot">💻</div>
+                            <div class="cert-step__year">2021</div>
+                            <div class="cert-step__name">BT Support</div>
                         </div>
-                        <div class="timeline-end bg-dark timeline-box">Brevet Technicien Support</div>
-                        <hr/>
-                    </li>
-                    <li>
-                        <hr/>
-                        <div class="timeline-start">2026</div>
-                        <div class="timeline-middle">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
-                                 fill="currentColor" class="h-5 w-5">
-                                <path fill-rule="evenodd"
-                                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809
-                                         a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88
-                                         a.75.75 0 10-1.06 1.061l2.5 2.5
-                                         a.75.75 0 001.137-.089l4-5.5z"
-                                      clip-rule="evenodd"/>
-                            </svg>
+                        <div class="cert-step cert-step--future">
+                            <div class="cert-step__dot">⭐</div>
+                            <div class="cert-step__year">2026</div>
+                            <div class="cert-step__name">BTS SIO SLAM</div>
                         </div>
-                        <div class="timeline-end bg-dark timeline-box">Brevet de Technicien Supérieur</div>
-                        <hr/>
-                    </li>
-                </ul>
+                    </div>
+                </div>
             </div>
+
+            <!-- Detail cards -->
+            <div class="cert-cards">
+
+                <!-- Brevet -->
+                <div class="cert-card cert-card--blue reveal">
+                    <div class="cert-card__bg-year">2016</div>
+                    <div class="cert-card__label">Collège</div>
+                    <div class="cert-card__name">Brevet des collèges</div>
+                    <div class="cert-card__detail">
+                        <div class="cert-detail-row">
+                            <span>📅</span>
+                            <span>2016</span>
+                        </div>
+                        <div class="cert-detail-row">
+                            <span>📍</span>
+                            <span>Collège Bx Frassati — 88000 Épinal</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bac -->
+                <div class="cert-card cert-card--orange reveal reveal-d1">
+                    <div class="cert-card__bg-year">2019</div>
+                    <div class="cert-card__label">Lycée</div>
+                    <div class="cert-card__name">Baccalauréat</div>
+                    <div class="cert-card__detail">
+                        <div class="cert-detail-row">
+                            <span>📅</span>
+                            <span>2019</span>
+                        </div>
+                        <div class="cert-detail-row">
+                            <span>📍</span>
+                            <span>Lycée Bx Frassati — 88500 Mirecourt</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BT Support -->
+                <div class="cert-card cert-card--purple reveal reveal-d2">
+                    <div class="cert-card__bg-year">2021</div>
+                    <div class="cert-card__label">Formation professionnelle</div>
+                    <div class="cert-card__name">Brevet Technicien Support</div>
+                    <div class="cert-card__detail">
+                        <div class="cert-detail-row">
+                            <span>📅</span>
+                            <span>2021</span>
+                        </div>
+                        <div class="cert-detail-row">
+                            <span>📍</span>
+                            <span>Doranco Formations — 93000 Bobigny</span>
+                        </div>
+                        <div class="cert-detail-row">
+                            <span>🖥️</span>
+                            <span>Support informatique & assistance utilisateur</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BTS SIO -->
+                <div class="cert-card cert-card--accent cert-card--future reveal reveal-d3">
+                    <div class="cert-card__bg-year">2026</div>
+                    <div class="cert-card__label">BTS</div>
+                    <div class="cert-card__name">BTS SIO — option SLAM</div>
+                    <div class="cert-card__detail">
+                        <div class="cert-detail-row">
+                            <span>📅</span>
+                            <span>2026 (prévu)</span>
+                        </div>
+                        <div class="cert-detail-row">
+                            <span>📍</span>
+                            <span>Lycée Robert Schuman — Dugny</span>
+                        </div>
+                        <div class="cert-detail-row">
+                            <span>⚙️</span>
+                            <span>Solutions Logicielles et Applications Métiers</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
         </div>
-</section>
-<section class="row m-3">
-    <article class="col bg-dark m-3">
-        <div class="window flex-1 border rounded-lg overflow-hidden bg-gray-800">
-            <div class="window-header flex items-center gap-2 bg-gray-700 text-white px-3 py-1">
-                <span class="w-3 h-3 bg-red-500 rounded-full"></span>
-                <span class="w-3 h-3 bg-yellow-500 rounded-full"></span>
-                <span class="w-3 h-3 bg-green-500 rounded-full"></span>
-                <span class="text-center text-dark text-uppercase bg-light rounded position-relative top-50 start-5 my-1 px-3 w-75">https://portfolio/brevet</span>
-            </div>
-            <div class="card-body p-3 text-light">
-                <h5 class="card-title text-uppercase">Brevet des collèges</h5>
-                <p class="card-text">
-                    <strong>Année : </strong>2016<br>
-                    <strong>Lieu : </strong>88000 Épinal<br>
-                    <strong>Établissement : </strong>Collège Bx Frassati
-                </p>
-            </div>
-        </div>
-    </article>
-    <article class="col bg-dark m-3">
-        <div class="window flex-1 border rounded-lg overflow-hidden bg-gray-800">
-            <div class="window-header flex items-center gap-2 bg-gray-700 text-white px-3 py-1">
-                <span class="w-3 h-3 bg-red-500 rounded-full"></span>
-                <span class="w-3 h-3 bg-yellow-500 rounded-full"></span>
-                <span class="w-3 h-3 bg-green-500 rounded-full"></span>
-                <span class="text-center text-dark text-uppercase bg-light rounded position-relative top-50 start-5 my-1 px-3 w-75">https://portfolio/bac</span>
-            </div>
-            <div class="card-body p-3 text-light">
-                <h5 class="card-title text-uppercase">Baccalauréat</h5>
-                <p class="card-text">
-                    <strong>Année : </strong>2019<br>
-                    <strong>Lieu : </strong>88500 Mirecourt<br>
-                    <strong>Établissement : </strong>Lycée Bx Frassati
-                </p>
-            </div>
-        </div>
-    </article>
-</section>
-<section class="row m-3">
-    <article class="col bg-dark m-3">
-        <div class="window flex-1 border rounded-lg overflow-hidden bg-gray-800">
-            <div class="window-header flex items-center gap-2 bg-gray-700 text-white px-3 py-1">
-                <span class="w-3 h-3 bg-red-500 rounded-full"></span>
-                <span class="w-3 h-3 bg-yellow-500 rounded-full"></span>
-                <span class="w-3 h-3 bg-green-500 rounded-full"></span>
-                <span class="text-center text-dark text-uppercase bg-light rounded position-relative top-50 start-5 my-1 px-3 w-75">https://portfolio/tech-supp</span>
-            </div>
-            <div class="card-body p-3 text-light">
-                <h5 class="card-title text-uppercase">Brevet Technicien Support</h5>
-                <p class="card-text">
-                    <strong>Année : </strong>2021<br>
-                    <strong>Lieu : </strong>93000 Bobigny<br>
-                    <strong>Établissement : </strong>Doranco Formations
-                </p>
-            </div>
-        </div>
-    </article>
-    <article class="col bg-dark m-3">
-        <div class="window flex-1 border rounded-lg overflow-hidden bg-gray-800">
-            <div class="window-header flex items-center gap-2 bg-gray-700 text-white px-3 py-1">
-                <span class="w-3 h-3 bg-red-500 rounded-full"></span>
-                <span class="w-3 h-3 bg-yellow-500 rounded-full"></span>
-                <span class="w-3 h-3 bg-green-500 rounded-full"></span>
-                <span class="text-center text-dark text-uppercase bg-light rounded position-relative top-50 start-5 my-1 px-3 w-75">https://portfolio/bts</span>
-            </div>
-            <div class="card-body p-3 text-light">
-                <h5 class="card-title text-uppercase">Brevet de Technicien Supérieur</h5>
-                <p class="card-text">
-                    <strong>Année : </strong>2026<br>
-                    <strong>Lieu : </strong>Dugny<br>
-                    <strong>Établissement : </strong>Lycée technique Robert Schuman
-                </p>
-            </div>
-        </div>
-    </article>
-</section>
-<footer class="text-center text-gray-400 text-sm py-4 fixed-bottom bg-dark">
-    © 2025 AERCE. Tous droits réservés.
+    </section>
+</main>
+
+<footer class="pf-footer">
+    <div class="container">© 2025 Augustin d'Erceville · AERCE. Tous droits réservés.</div>
 </footer>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-        crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
-        integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
-        crossorigin="anonymous"></script>
-<script>
-    const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
-    [...popoverTriggerList].map(el => new bootstrap.Popover(el));
-</script>
 
+<script>
+    // Mobile nav
+    const toggle = document.getElementById('navToggle');
+    const links  = document.getElementById('navLinks');
+    toggle.addEventListener('click', () => links.classList.toggle('open'));
+    document.addEventListener('click', e => {
+        if (!e.target.closest('.pf-nav')) links.classList.remove('open');
+    });
+
+    // Reveal
+    const observer = new IntersectionObserver(
+        entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+        { threshold: 0.08 }
+    );
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
 </body>
 </html>

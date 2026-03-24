@@ -1,265 +1,344 @@
 <!doctype html>
-<html lang="fr" class="bg-dark">
+<html lang="fr">
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css"/>
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css"/>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
-          rel="stylesheet">
+    <title>Contact — Augustin d'Erceville</title>
     <link rel="stylesheet" href="styles.css">
-    <title>Portfolio - Contacts</title>
+    <style>
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        /* Copy feedback */
+        .copy-feedback {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.8rem;
+            color: var(--accent);
+            margin-top: 0.5rem;
+            opacity: 0;
+            transform: translateY(4px);
+            transition: all 0.3s;
+        }
+        .copy-feedback.show { opacity: 1; transform: none; }
+
+        /* Contact cards grid */
+        .contact-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.875rem;
+        }
+
+        .contact-card {
+            background: var(--bg-2);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.25rem;
+            transition: border-color 0.25s var(--ease), transform 0.25s var(--ease);
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .contact-card:hover {
+            border-color: var(--border-2);
+            transform: translateY(-3px);
+        }
+
+        .contact-card--email:hover { border-color: rgba(234, 76, 76, 0.4); }
+        .contact-card--linkedin:hover { border-color: rgba(10, 102, 194, 0.5); }
+        .contact-card--github:hover { border-color: rgba(255,255,255,0.25); }
+        .contact-card--discord:hover { border-color: rgba(88, 101, 242, 0.5); }
+        .contact-card--youtube:hover { border-color: rgba(255, 0, 0, 0.4); }
+        .contact-card--twitch:hover { border-color: rgba(145, 70, 255, 0.5); }
+
+        .contact-card__top {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .contact-card__logo {
+            width: 40px; height: 40px;
+            border-radius: 9px;
+            background: var(--bg-3);
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .contact-card__logo img {
+            width: 24px; height: 24px;
+            object-fit: contain;
+        }
+
+        .contact-card__platform {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-3);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .contact-card__handle {
+            font-family: 'Syne', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-top: 0.1rem;
+        }
+
+        .contact-card__desc {
+            font-size: 0.815rem;
+            color: var(--text-2);
+            line-height: 1.55;
+        }
+
+        /* Availability block */
+        .avail-card {
+            background: var(--bg-2);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .avail-card__header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .avail-card__title {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .avail-card__body {
+            font-size: 0.9rem;
+            color: var(--text-2);
+            line-height: 1.7;
+            margin-bottom: 1.25rem;
+        }
+
+        .avail-card__row {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.845rem;
+            color: var(--text-2);
+            margin-bottom: 0.4rem;
+        }
+
+        .avail-card__row span:first-child { font-size: 1rem; }
+
+        @media (max-width: 880px) {
+            .contact-layout { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 540px) {
+            .contact-cards { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
-<body style="font-family: 'JetBrains Mono', monospace;" class="bg-dark">
-<header class="navbar bg-dark border-bottom border-body">
-    <div class="container-fluid fs-3">
-        <a class="navbar-brand fs-3 text-light" href="index.html">
-            <img src="Files/Logo.png" alt="Logo" width="48" height="48" class="d-inline-block align-text-center">
-            Me contacter
-        </a>
-        <nav>
-            <ul class="nav justify-content-end nav-pills">
-                <li class="nav-item">
-                    <a class="nav-link fw-medium text-light" aria-current="page" href="index.html"
-                       data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-placement="bottom"
-                       data-bs-content="Accueil" data-bs-custom-class="popup-header">🏠</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link fw-light text-body" aria-current="page" href="projects.html"
-                       data-bs-toggle="popover"
-                       data-bs-trigger="hover focus" data-bs-placement="bottom" data-bs-content="Mes Projets"
-                       data-bs-custom-class="popup-header">💻</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link fw-light text-body" aria-current="page" href="experience.html"
-                       data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-placement="bottom"
-                       data-bs-content="Expériences professionnelles" data-bs-custom-class="popup-header">📄</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link fw-light text-body" aria-current="page" href="skills.html"
-                       data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-placement="bottom"
-                       data-bs-content="Compétences techniques" data-bs-custom-class="popup-header">🛠️</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link fw-light text-body" aria-current="page" href="certificates.html"
-                       data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-placement="bottom"
-                       data-bs-content="Diplômes et formations" data-bs-custom-class="popup-header">🎓</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active fw-light text-body" aria-current="page" href="contact.html"
-                       data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-placement="bottom"
-                       data-bs-content="Me Contacter" data-bs-custom-class="popup-header">📧</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link fw-light text-body" aria-current="page" href="about.html"
-                       data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-placement="bottom"
-                       data-bs-content="A propos" data-bs-custom-class="popup-header">👤</a>
-                </li>
-            </ul>
-        </nav>
-    </div>
-</header>
-<section class="row m-3">
-    <article class="col bg-dark m-3">
-        <div class="window flex-1 border rounded-lg overflow-hidden bg-gray-800 h-100">
-            <div class="window-header flex items-center gap-2 bg-gray-700 text-white px-3 py-1">
-                <span class="w-3 h-3 bg-red-500 rounded-full"></span>
-                <span class="w-3 h-3 bg-yellow-500 rounded-full"></span>
-                <span class="w-3 h-3 bg-green-500 rounded-full"></span>
-                <span class="text-center text-dark text-uppercase bg-light rounded position-relative top-50 start-5 my-1 px-3 w-75">https://portfolio/gmail</span>
+<body>
+
+<nav class="pf-nav">
+    <a href="index.html" class="pf-nav__brand">
+        <span class="monogram">AE</span>
+        <span>Augustin<span class="pf-nav__sep"> /</span> Portfolio</span>
+    </a>
+    <ul class="pf-nav__links" id="navLinks">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="about.html">À propos</a></li>
+        <li><a href="projects.html">Projets</a></li>
+        <li><a href="experience.html">Expériences</a></li>
+        <li><a href="skills.html">Compétences</a></li>
+        <li><a href="certificates.html">Diplômes</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+    <button class="pf-nav__toggle" id="navToggle">☰</button>
+</nav>
+
+<main class="pf-page">
+    <section class="py-section">
+        <div class="container">
+
+            <!-- Header -->
+            <div class="mb-lg reveal">
+                <div class="section-label">Contact</div>
+                <h1 class="section-title">Me contacter</h1>
+                <p class="section-sub">Pour toute opportunité professionnelle, collaboration ou question, n'hésitez pas à me rejoindre.</p>
             </div>
-            <div class="row g-0">
-                <div class="col-3">
-                    <img src="https://img.icons8.com/?size=100&id=Iq5AZypojpBD&format=png&color=000000" width="512" height="512" class="img-fluid rounded-start p-3" alt="Logo Gmail">
+
+            <div class="contact-layout">
+
+                <!-- Left: Availability + email -->
+                <div>
+
+                    <!-- Availability -->
+                    <div class="avail-card reveal">
+                        <div class="avail-card__header">
+              <span class="status-pill">
+                <span class="status-pill__dot"></span>
+                Disponible
+              </span>
+                            <h2 class="avail-card__title">Travaillons ensemble</h2>
+                        </div>
+                        <p class="avail-card__body">
+                            Je suis actuellement en recherche d'un poste dans le développement d'applications.
+                            Si mon profil vous intéresse, je serai ravi d'en discuter.
+                        </p>
+                        <div class="avail-card__row">
+                            <span>📍</span>
+                            <span>Île-de-France (mobilité possible)</span>
+                        </div>
+                        <div class="avail-card__row">
+                            <span>🕐</span>
+                            <span>Disponible dès maintenant</span>
+                        </div>
+                        <div class="avail-card__row">
+                            <span>📋</span>
+                            <span>CDI / CDD / Alternance</span>
+                        </div>
+                    </div>
+
+                    <!-- Email CTA -->
+                    <div class="pf-window reveal reveal-d1" style="margin-top:1rem">
+                        <div class="pf-window__bar">
+                            <div class="pf-window__dot pf-window__dot--r"></div>
+                            <div class="pf-window__dot pf-window__dot--y"></div>
+                            <div class="pf-window__dot pf-window__dot--g"></div>
+                            <span class="pf-window__url">mail:augustinderceville@gmail.com</span>
+                        </div>
+                        <div class="pf-window__body">
+                            <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.875rem">
+                                <div style="width:40px;height:40px;border-radius:9px;background:var(--bg-3);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:1.2rem">📧</div>
+                                <div>
+                                    <div style="font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);font-family:'JetBrains Mono',monospace;">E-mail principal</div>
+                                    <div style="font-family:'Syne',sans-serif;font-size:.95rem;font-weight:700">augustinderceville@gmail.com</div>
+                                </div>
+                            </div>
+                            <p style="font-size:.855rem;color:var(--text-2);line-height:1.6;margin-bottom:1rem">
+                                Moyen le plus direct pour me contacter. Je réponds généralement sous 24–48h.
+                            </p>
+                            <div style="display:flex;gap:.5rem;flex-wrap:wrap">
+                                <button class="pf-btn pf-btn--primary" onclick="copyEmail()">Copier l'adresse</button>
+                                <a href="mailto:augustinderceville@gmail.com" class="pf-btn pf-btn--outline">Ouvrir le client mail</a>
+                            </div>
+                            <div class="copy-feedback" id="copyFeedback">✓ Adresse copiée dans le presse-papier</div>
+                        </div>
+                    </div>
+
                 </div>
-                <div class="col">
-                    <div class="card-body p-3 text-light">
-                        <h5 class="card-title text-uppercase">Adresse mail</h5>
-                        <p class="card-text">Le moyen le plus direct pour me contacter. Que ce soit pour une collaboration, une opportunité professionnelle ou une simple question, je réponds généralement rapidement.</p>
-                        <a href="" id="copyEmailBtn" class="btn btn-outline-danger">
-                            Contacter par mail
-                        </a>
-                        <p id="copyMsg" style="display:none; color:limegreen; margin-top:10px;">
-                            Adresse email copiée
-                        </p>
-                        <script>
-                            document.getElementById("copyEmailBtn").addEventListener("click", function (e) {
-                                e.preventDefault();
-                                const email = "augustinderceville@gmail.com";
-                                navigator.clipboard.writeText(email).then(() => {
-                                    const msg = document.getElementById("copyMsg");
-                                    msg.style.display = "block";
-                                    setTimeout(() => {
-                                        msg.style.display = "none";
-                                    }, 5000);
-                                }).catch(err => {
-                                    alert("Impossible de copier l'adresse email.");
-                                    console.error(err);
-                                });
-                            });
-                        </script>
-                        <p class="card-text"><small class="text-dark-emphasis">Mise à jour • 12/09/2025</small>
-                        </p>
+
+                <!-- Right: Social links -->
+                <div class="reveal reveal-d2">
+                    <p class="section-label" style="margin-bottom:1rem">Réseaux & profils</p>
+                    <div class="contact-cards">
+
+                        <!-- LinkedIn -->
+                        <div class="contact-card contact-card--linkedin">
+                            <div class="contact-card__top">
+                                <div class="contact-card__logo">
+                                    <img src="https://img.icons8.com/?size=48&id=kBCrQMzpQDLQ&format=png" alt="LinkedIn" onerror="this.style.display='none';this.parentNode.innerHTML='💼'">
+                                </div>
+                                <div>
+                                    <div class="contact-card__platform">LinkedIn</div>
+                                    <div class="contact-card__handle">Voir le profil</div>
+                                </div>
+                            </div>
+                            <div class="contact-card__desc">Profil professionnel détaillé avec expériences et compétences.</div>
+                            <a href="https://www.linkedin.com/in/augustin-d-erceville-407a24201/" target="_blank" class="pf-btn pf-btn--outline" style="font-size:.8rem;padding:.45rem .875rem">
+                                Ouvrir ↗
+                            </a>
+                        </div>
+
+                        <!-- GitHub -->
+                        <div class="contact-card contact-card--github">
+                            <div class="contact-card__top">
+                                <div class="contact-card__logo">
+                                    <img src="https://img.icons8.com/?size=48&id=efFfwotdkiU5&format=png" alt="GitHub" onerror="this.style.display='none';this.parentNode.innerHTML='🐙'">
+                                </div>
+                                <div>
+                                    <div class="contact-card__platform">GitHub</div>
+                                    <div class="contact-card__handle">Augustin-Erceville</div>
+                                </div>
+                            </div>
+                            <div class="contact-card__desc">Projets, contributions open-source et expérimentations.</div>
+                            <a href="https://github.com/Augustin-Erceville" target="_blank" class="pf-btn pf-btn--ghost" style="font-size:.8rem;padding:.45rem .875rem">
+                                Ouvrir ↗
+                            </a>
+                        </div>
+
+                        <!-- Discord -->
+                        <div class="contact-card contact-card--discord">
+                            <div class="contact-card__top">
+                                <div class="contact-card__logo">
+                                    <img src="https://img.icons8.com/?size=48&id=lRyYU5vFuN82&format=png" alt="Discord" onerror="this.style.display='none';this.parentNode.innerHTML='💬'">
+                                </div>
+                                <div>
+                                    <div class="contact-card__platform">Discord</div>
+                                    <div class="contact-card__handle">Serveur</div>
+                                </div>
+                            </div>
+                            <div class="contact-card__desc">Espace communautaire pour échanger et collaborer.</div>
+                            <a href="https://discord.gg/vhmkryD7BA" target="_blank" class="pf-btn pf-btn--ghost" style="font-size:.8rem;padding:.45rem .875rem">
+                                Rejoindre ↗
+                            </a>
+                        </div>
+
+
+
+
+
                     </div>
                 </div>
+
             </div>
         </div>
-    </article>
-    <article class="col bg-dark m-3">
-        <div class="window flex-1 border rounded-lg overflow-hidden bg-gray-800 h-100">
-            <div class="window-header flex items-center gap-2 bg-gray-700 text-white px-3 py-1">
-                <span class="w-3 h-3 bg-red-500 rounded-full"></span>
-                <span class="w-3 h-3 bg-yellow-500 rounded-full"></span>
-                <span class="w-3 h-3 bg-green-500 rounded-full"></span>
-                <span class="text-center text-dark text-uppercase bg-light rounded position-relative top-50 start-5 my-1 px-3 w-75">https://linkedin.com/augustin-d-erceville</span>
-            </div>
-            <div class="row g-0">
-                <div class="col-3">
-                    <img src="https://img.icons8.com/?size=100&id=kBCrQMzpQDLQ&format=png&color=000000"
-                         width="512" height="512" class="img-fluid rounded-start p-3" alt="...">
-                </div>
-                <div class="col">
-                    <div class="card-body p-3 text-light">
-                        <h5 class="card-title text-uppercase">Linkedin</h5>
-                        <p class="card-text h-100">Mon profil professionnel détaillé : expériences, compétences et parcours. Idéal pour les contacts liés au travail et les opportunités de collaboration.</p>
-                        <a href="https://www.linkedin.com/in/augustin-d-erceville-407a24201/"
-                           class="btn btn-outline-primary" target="_blank">Voir le profil</a>
-                        <p class="card-text"><small class="text-dark-emphasis">Mise à jour • 12/09/2025</small>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </article>
-    <article class="col bg-dark m-3">
-        <div class="window flex-1 border rounded-lg overflow-hidden bg-gray-800 h-100">
-            <div class="window-header flex items-center gap-2 bg-gray-700 text-white px-3 py-1">
-                <span class="w-3 h-3 bg-red-500 rounded-full"></span>
-                <span class="w-3 h-3 bg-yellow-500 rounded-full"></span>
-                <span class="w-3 h-3 bg-green-500 rounded-full"></span>
-                <span class="text-center text-dark text-uppercase bg-light rounded position-relative top-50 start-5 my-1 px-3 w-75">https://github.com/Augustin-Erceville</span>
-            </div>
-            <div class="row g-0">
-                <div class="col-3">
-                    <img src="https://img.icons8.com/?size=100&id=efFfwotdkiU5&format=png&color=000000"
-                         width="512" height="512" class="img-fluid rounded-start p-3" alt="...">
-                </div>
-                <div class="col">
-                    <div class="card-body p-3 text-light h-100">
-                        <h5 class="card-title text-uppercase">Github</h5>
-                        <p class="card-text">Mon espace de développement où je partage mes projets, mes contributions open-source et mes expérimentations en programmation.</p>
-                        <a href="https://github.com/Augustin-Erceville"
-                           class="btn btn-outline-dark" target="_blank">Voir le profil</a>
-                        <p class="card-text"><small class="text-dark-emphasis">Mise à jour • 12/09/2025</small>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </article>
-</section>
-<section class="row m-3">
-    <article class="col bg-dark m-3">
-        <div class="window flex-1 border rounded-lg overflow-hidden bg-gray-800 h-100">
-            <div class="window-header flex items-center gap-2 bg-gray-700 text-white px-3 py-1">
-                <span class="w-3 h-3 bg-red-500 rounded-full"></span>
-                <span class="w-3 h-3 bg-yellow-500 rounded-full"></span>
-                <span class="w-3 h-3 bg-green-500 rounded-full"></span>
-                <span class="text-center text-dark text-uppercase bg-light rounded position-relative top-50 start-5 my-1 px-3 w-75">https://www.youtube.com/@Mitricum</span>
-            </div>
-            <div class="row g-0">
-                <div class="col-3">
-                    <img src="https://img.icons8.com/?size=100&id=omVNNE6wkyP7&format=png&color=000000"
-                         width="512" height="512" class="img-fluid rounded-start p-3" alt="...">
-                </div>
-                <div class="col">
-                    <div class="card-body p-3 text-light">
-                        <h5 class="card-title text-uppercase">Youtube</h5>
-                        <p class="card-text h-100">Une chaîne où je publiais du contenu. En liens avec ma passion pour les jeux et le montage vidéos.</p>
-                        <a href="https://www.youtube.com/@Mitricum"
-                           class="btn btn-outline-danger" target="_blank">Voir le profil</a>
-                        <p class="card-text"><small class="text-dark-emphasis">Mise à jour • 12/09/2025</small>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </article>
-    <article class="col bg-dark m-3">
-        <div class="window flex-1 border rounded-lg overflow-hidden bg-gray-800 h-100">
-            <div class="window-header flex items-center gap-2 bg-gray-700 text-white px-3 py-1">
-                <span class="w-3 h-3 bg-red-500 rounded-full"></span>
-                <span class="w-3 h-3 bg-yellow-500 rounded-full"></span>
-                <span class="w-3 h-3 bg-green-500 rounded-full"></span>
-                <span class="text-center text-dark text-uppercase bg-light rounded position-relative top-50 start-5 my-1 px-3 w-75">https://www.twitch.tv/mitricum_</span>
-            </div>
-            <div class="row g-0">
-                <div class="col-3">
-                    <img src="https://img.icons8.com/?size=100&id=EE2eQW4V47ek&format=png&color=000000"
-                         width="512" height="512" class="img-fluid rounded-start p-3" alt="...">
-                </div>
-                <div class="col">
-                    <div class="card-body p-3 text-light">
-                        <h5 class="card-title text-uppercase">Twitch</h5>
-                        <p class="card-text">Mon profil professionnel détaillé : expériences, compétences et parcours. Idéal pour les contacts liés au travail et les opportunités de collaboration.</p>
-                        <a href="https://www.twitch.tv/mitricum_"
-                           class="btn btn-outline-primary" target="_blank">Voir le profil</a>
-                        <p class="card-text"><small class="text-dark-emphasis">Mise à jour • 12/09/2025</small>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </article>
-    <article class="col bg-dark m-3">
-        <div class="window flex-1 border rounded-lg overflow-hidden bg-gray-800 h-100">
-            <div class="window-header flex items-center gap-2 bg-gray-700 text-white px-3 py-1">
-                <span class="w-3 h-3 bg-red-500 rounded-full"></span>
-                <span class="w-3 h-3 bg-yellow-500 rounded-full"></span>
-                <span class="w-3 h-3 bg-green-500 rounded-full"></span>
-                <span class="text-center text-dark text-uppercase bg-light rounded position-relative top-50 start-5 my-1 px-3 w-75">https://discord.gg/vhmkryD7BA</span>
-            </div>
-            <div class="row g-0">
-                <div class="col-3">
-                    <img src="https://img.icons8.com/?size=100&id=lRyYU5vFuN82&format=png&color=000000"
-                         width="512" height="512" class="img-fluid rounded-start p-3" alt="...">
-                </div>
-                <div class="col">
-                    <div class="card-body p-3 text-light">
-                        <h5 class="card-title text-uppercase">Discord</h5>
-                        <p class="card-text">Un espace communautaire où l’on peut échanger, poser des questions et partager des projets.</p>
-                        <a href="https://discord.gg/vhmkryD7BA"
-                           class="btn btn-outline-primary" target="_blank">Rejoindre</a>
-                        <p class="card-text"><small class="text-dark-emphasis">Mise à jour • 12/09/2025</small>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </article>
-</section>
-<footer class="text-center text-gray-400 text-sm py-4 fixed-bottom bg-dark">
-    © 2025 AERCE. Tous droits réservés.
+    </section>
+</main>
+
+<footer class="pf-footer">
+    <div class="container">© 2025 Augustin d'Erceville · AERCE. Tous droits réservés.</div>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-        crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
-        integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
-        crossorigin="anonymous"></script>
 <script>
-    var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
-    var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-        return new bootstrap.Popover(popoverTriggerEl)
-    })
+    // Mobile nav
+    const toggle = document.getElementById('navToggle');
+    const links  = document.getElementById('navLinks');
+    toggle.addEventListener('click', () => links.classList.toggle('open'));
+    document.addEventListener('click', e => {
+        if (!e.target.closest('.pf-nav')) links.classList.remove('open');
+    });
+
+    // Copy email
+    function copyEmail() {
+        navigator.clipboard.writeText('augustinderceville@gmail.com').then(() => {
+            const fb = document.getElementById('copyFeedback');
+            fb.classList.add('show');
+            setTimeout(() => fb.classList.remove('show'), 3000);
+        });
+    }
+
+    // Reveal
+    const observer = new IntersectionObserver(
+        entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+        { threshold: 0.08 }
+    );
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
 </body>
 </html>

@@ -1,106 +1,435 @@
 <!doctype html>
-<html lang="fr" data-theme="dark">
+<html lang="fr">
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css"/>
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css"/>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
-          rel="stylesheet">
+    <title>Augustin d'Erceville — Portfolio</title>
     <link rel="stylesheet" href="styles.css">
-    <title>A.Erceville Portfolio - Accueil</title>
-</head>
-<body style="font-family: 'JetBrains Mono', monospace;" class="bg-dark">
-<div class="hero min-h-screen"
-     style="background-image: url(https://wallup.net/wp-content/uploads/2017/11/22/407978-programming-PHP-programming_language-syntax_highlighting-minified-knowledge-coding-code-HTML-computer-pixels-Computer_screen-logic-748x499.jpg);">
-    <div class="hero-overlay"></div>
-    <div class="max-w-md bg-white/10 backdrop-blur-md rounded-xl p-8 shadow-lg text-light">
-        <h1 class="mb-5 text-5xl font-bold text-center">Bienvenue sur mon portfolio</h1>
-        <p class="mb-5" style="text-align: justify;">
-            Ce portfolio regroupe l’ensemble de mon parcours en développement web : mes projets réalisés, mes
-            expériences professionnelles, mes compétences techniques et mes certificats.
-        </p>
-        <p class="mb-5" style="text-align: justify;">
-            L’objectif est de vous donner une
-            vision globale de mon travail, de mon évolution et des outils que j’utilise, afin de mieux comprendre mon
-            approche et
-            ma passion pour la création numérique.
-        </p>
-        <a href="about.html" class="block text-center text-light" >
-            <button class="btn btn-color-cycle">COMMENCER</button>
-        </a>
-    </div>
-
     <style>
-        @keyframes colorCycle {
-            0% {background-color: #0d6efd;}
-            10% {background-color: #6610f2;}
-            20% {background-color: #6f42c1;}
-            30% {background-color: #d63384;}
-            40% {background-color: #dc3545;}
-            50% {background-color: #fd7e14;}
-            60% {background-color: #ffc107;}
-            70% {background-color: #198754;}
-            80% {background-color: #20c997;}
-            90% {background-color: #0dcaf0;}
-            100% {background-color: #0d6efd;}
+        /* Hero-specific styles */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
         }
-        .btn-color-cycle {
-            animation: colorCycle 10s infinite;
-            color: white;
-            transition: background-color 0.5s;
+
+        /* Dot grid background */
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle, var(--border) 1px, transparent 1px);
+            background-size: 32px 32px;
+            opacity: 0.5;
+            pointer-events: none;
         }
-        .btn-color-cycle:hover {
-            transform: scale(1.05);
+
+        /* Gradient overlay */
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                    radial-gradient(ellipse 60% 60% at 20% 50%, rgba(200,255,87,0.04) 0%, transparent 70%),
+                    radial-gradient(ellipse 50% 80% at 80% 100%, rgba(200,255,87,0.025) 0%, transparent 60%),
+                    linear-gradient(180deg, var(--bg) 0%, transparent 20%, transparent 80%, var(--bg) 100%);
+            pointer-events: none;
+        }
+
+        .hero__inner {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            width: 100%;
+            max-width: 1160px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            padding-top: var(--nav-h);
+        }
+
+        /* Decorative large background text */
+        .hero__bg-text {
+            position: absolute;
+            top: 50%;
+            right: -2rem;
+            transform: translateY(-50%);
+            font-family: 'Syne', sans-serif;
+            font-weight: 800;
+            font-size: clamp(6rem, 14vw, 14rem);
+            letter-spacing: -0.06em;
+            color: rgba(255,255,255,0.018);
+            pointer-events: none;
+            user-select: none;
+            z-index: 0;
+            white-space: nowrap;
+        }
+
+        .hero__left { position: relative; z-index: 1; }
+
+        .hero__name {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(2.75rem, 5.5vw, 4.5rem);
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            line-height: 1.05;
+            margin-bottom: 1.25rem;
+        }
+
+        .hero__name span { color: var(--accent); }
+
+        .hero__role {
+            font-size: 1.05rem;
+            color: var(--text-2);
+            margin-bottom: 1.75rem;
+            font-weight: 400;
+        }
+
+        .hero__role strong { color: var(--text); font-weight: 500; }
+
+        .hero__actions {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-bottom: 2.5rem;
+        }
+
+        .hero__meta {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .hero__meta-item {
+            font-size: 0.82rem;
+            color: var(--text-3);
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+
+        .hero__meta-item::before {
+            content: '';
+            width: 4px; height: 4px;
+            border-radius: 50%;
+            background: var(--border-2);
+            flex-shrink: 0;
+        }
+        .hero__meta-item:first-child::before { display: none; }
+
+        /* Right side terminal window */
+        .hero__right { position: relative; z-index: 1; }
+
+        .hero__terminal {
+            background: var(--bg-2);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: 0 32px 80px rgba(0,0,0,0.5);
+        }
+
+        .terminal__bar {
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+            padding: 0.65rem 0.875rem;
+            background: var(--bg-3);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .terminal__dot {
+            width: 10px; height: 10px;
+            border-radius: 50%;
+        }
+        .terminal__dot--r { background: #FF5F57; }
+        .terminal__dot--y { background: #FEBC2E; }
+        .terminal__dot--g { background: #28C840; }
+
+        .terminal__title {
+            margin-left: 0.5rem;
+            font-size: 0.72rem;
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--text-3);
+        }
+
+        .terminal__body {
+            padding: 1.25rem 1.5rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.825rem;
+            line-height: 1.8;
+        }
+
+        .t-comment { color: var(--text-3); }
+        .t-cmd { color: var(--text-2); }
+        .t-cmd .prompt { color: var(--accent); font-weight: 500; }
+        .t-output { color: #A8D8A8; }
+        .t-output-dim { color: var(--text-3); }
+        .t-key { color: #89CFEF; }
+        .t-val { color: #F4C08B; }
+        .t-cursor {
+            display: inline-block;
+            width: 8px; height: 14px;
+            background: var(--accent);
+            vertical-align: middle;
+            margin-left: 2px;
+            animation: blink 1.1s steps(2, start) infinite;
+        }
+
+        @keyframes blink { 50% { opacity: 0; } }
+
+        /* Quick nav cards at bottom of hero */
+        .hero__nav-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.75rem;
+            margin-top: 2rem;
+        }
+
+        .hero__nav-card {
+            background: var(--bg-2);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 0.875rem 1rem;
+            cursor: pointer;
+            transition: border-color 0.2s, transform 0.2s;
+            text-decoration: none;
+            display: block;
+        }
+
+        .hero__nav-card:hover {
+            border-color: var(--border-2);
+            transform: translateY(-2px);
+        }
+
+        .hero__nav-card:hover .nav-card__arrow { transform: translate(2px, -2px); }
+
+        .nav-card__top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.25rem;
+        }
+
+        .nav-card__emoji { font-size: 1.1rem; }
+        .nav-card__arrow {
+            font-size: 0.75rem;
+            color: var(--text-3);
+            transition: transform 0.2s;
+        }
+
+        .nav-card__label {
+            font-family: 'Syne', sans-serif;
+            font-size: 0.845rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        /* Scroll indicator */
+        .hero__scroll {
+            position: absolute;
+            bottom: 2.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.72rem;
+            color: var(--text-3);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            animation: scrollBounce 2.5s ease-in-out infinite;
+            z-index: 1;
+        }
+
+        .hero__scroll svg {
+            animation: scrollBounce 2.5s ease-in-out infinite;
+        }
+
+        @keyframes scrollBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(5px); }
+        }
+
+        /* Stagger entrance */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeUp 0.7s var(--ease) forwards;
+        }
+        .fade-up-d1 { animation-delay: 0.1s; }
+        .fade-up-d2 { animation-delay: 0.22s; }
+        .fade-up-d3 { animation-delay: 0.34s; }
+        .fade-up-d4 { animation-delay: 0.46s; }
+        .fade-up-d5 { animation-delay: 0.58s; }
+        .fade-up-d6 { animation-delay: 0.7s; }
+
+        @keyframes fadeUp {
+            to { opacity: 1; transform: none; }
+        }
+
+        @media (max-width: 900px) {
+            .hero__inner { grid-template-columns: 1fr; gap: 2.5rem; }
+            .hero__right { display: none; }
+            .hero__bg-text { display: none; }
+            .hero__nav-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 480px) {
+            .hero__nav-grid { grid-template-columns: 1fr; }
+            .hero__actions { flex-direction: column; }
+            .hero__actions .pf-btn { text-align: center; justify-content: center; }
         }
     </style>
+</head>
+<body>
 
-    <div class="fab fab-flower">
-        <div tabindex="0" role="button" class="btn btn-secondary d-flex align-items-center justify-content-center"
-             style="width: 80px; height: 80px; border-radius: 50%;">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 16 16" width="48" height="48">
-                <path fill-rule="evenodd"
-                      d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
-            </svg>
+<!-- Navigation -->
+<nav class="pf-nav">
+    <a href="index.html" class="pf-nav__brand">
+        <span class="monogram">AE</span>
+        <span>Augustin<span class="pf-nav__sep"> /</span> Portfolio</span>
+    </a>
+    <ul class="pf-nav__links" id="navLinks">
+        <li><a href="index.html" class="active">Accueil</a></li>
+        <li><a href="about.html">À propos</a></li>
+        <li><a href="projects.html">Projets</a></li>
+        <li><a href="experience.html">Expériences</a></li>
+        <li><a href="skills.html">Compétences</a></li>
+        <li><a href="certificates.html">Diplômes</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="pf-nav__toggle" id="navToggle" aria-label="Menu">☰</button>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+    <div class="hero__bg-text">AERCE</div>
+
+    <div class="hero__inner">
+        <!-- Left -->
+        <div class="hero__left">
+            <div class="status-pill fade-up fade-up-d1" style="margin-bottom:1.25rem">
+                <span class="status-pill__dot"></span>
+                Disponible — Recherche d'emploi
+            </div>
+
+            <h1 class="hero__name fade-up fade-up-d2">
+                Augustin<br><span>d'Erceville</span>
+            </h1>
+
+            <p class="hero__role fade-up fade-up-d3">
+                <strong>Développeur d'applications</strong> · BTS SIO option SLAM<br>
+                Passionné par la création de solutions numériques propres et efficaces.
+            </p>
+
+            <div class="hero__actions fade-up fade-up-d4">
+                <a href="projects.html" class="pf-btn pf-btn--primary">Voir mes projets →</a>
+                <a href="contact.html" class="pf-btn pf-btn--outline">Me contacter</a>
+                <a href="about.html" class="pf-btn pf-btn--ghost">À propos</a>
+            </div>
+
+            <div class="hero__meta fade-up fade-up-d5">
+                <span class="hero__meta-item">Dugny — Île-de-France</span>
+                <span class="hero__meta-item">Java · PHP · SQL</span>
+                <span class="hero__meta-item">JavaFX · Bootstrap</span>
+            </div>
+
+            <div class="hero__nav-grid fade-up fade-up-d6">
+                <a href="experience.html" class="hero__nav-card">
+                    <div class="nav-card__top">
+                        <span class="nav-card__emoji">📄</span>
+                        <span class="nav-card__arrow">↗</span>
+                    </div>
+                    <div class="nav-card__label">Expériences</div>
+                </a>
+                <a href="skills.html" class="hero__nav-card">
+                    <div class="nav-card__top">
+                        <span class="nav-card__emoji">🛠️</span>
+                        <span class="nav-card__arrow">↗</span>
+                    </div>
+                    <div class="nav-card__label">Compétences</div>
+                </a>
+                <a href="certificates.html" class="hero__nav-card">
+                    <div class="nav-card__top">
+                        <span class="nav-card__emoji">🎓</span>
+                        <span class="nav-card__arrow">↗</span>
+                    </div>
+                    <div class="nav-card__label">Diplômes</div>
+                </a>
+            </div>
         </div>
-        <div tabindex="0" role="button" class="btn btn-light d-flex align-items-center justify-content-center"
-             style="width: 80px; height: 80px; border-radius: 50%;">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 16 16" width="48" height="48">
-                <path fill-rule="evenodd"
-                      d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
-            </svg>
+
+        <!-- Right: Terminal -->
+        <div class="hero__right fade-up fade-up-d3">
+            <div class="hero__terminal">
+                <div class="terminal__bar">
+                    <div class="terminal__dot terminal__dot--r"></div>
+                    <div class="terminal__dot terminal__dot--y"></div>
+                    <div class="terminal__dot terminal__dot--g"></div>
+                    <span class="terminal__title">augustin@portfolio ~ zsh</span>
+                </div>
+                <div class="terminal__body">
+                    <div class="t-comment"># Profil développeur</div>
+                    <div class="t-cmd"><span class="prompt">❯</span> cat profil.json</div>
+                    <br>
+                    <div class="t-output-dim">{</div>
+                    <div style="padding-left:1rem">
+                        <div><span class="t-key">"nom"</span><span class="t-output-dim">:</span> <span class="t-val">"Augustin d'Erceville"</span><span class="t-output-dim">,</span></div>
+                        <div><span class="t-key">"formation"</span><span class="t-output-dim">:</span> <span class="t-val">"BTS SIO SLAM"</span><span class="t-output-dim">,</span></div>
+                        <div><span class="t-key">"statut"</span><span class="t-output-dim">:</span> <span class="t-val">"En recherche d'emploi"</span><span class="t-output-dim">,</span></div>
+                        <div><span class="t-key">"stack"</span><span class="t-output-dim">:</span> <span class="t-output-dim">[</span></div>
+                        <div style="padding-left:1rem">
+                            <span class="t-val">"Java"</span><span class="t-output-dim">,</span>
+                            <span class="t-val">"PHP"</span><span class="t-output-dim">,</span>
+                            <span class="t-val">"SQL"</span><span class="t-output-dim">,</span>
+                            <span class="t-val">"HTML/CSS"</span>
+                        </div>
+                        <div><span class="t-output-dim">],</span></div>
+                        <div><span class="t-key">"contact"</span><span class="t-output-dim">:</span> <span class="t-val">"augustinderceville@gmail.com"</span></div>
+                    </div>
+                    <div class="t-output-dim">}</div>
+                    <br>
+                    <div class="t-cmd"><span class="prompt">❯</span> git log --oneline -3</div>
+                    <div class="t-output">a3f2b1c feat: gestion_lprs planning view</div>
+                    <div class="t-output">9e1d4a8 feat: cinéliste TMDB API integration</div>
+                    <div class="t-output">c82f019 feat: discord logsystem 77+ events</div>
+                    <br>
+                    <div class="t-cmd"><span class="prompt">❯</span> <span class="t-cursor"></span></div>
+                </div>
+            </div>
         </div>
-        <a aria-current="page" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-placement="bottom"
-           data-bs-custom-class="popup-header" class="btn btn-xl fs-2" data-bs-content="Mes Projets"
-           href="projects.html">💻</a>
-        <a aria-current="page" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-placement="bottom"
-           data-bs-custom-class="popup-header" class="btn btn-xl fs-2" data-bs-content="Expériences"
-           href="experience.html">📄</a>
-        <a aria-current="page" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-placement="bottom"
-           data-bs-custom-class="popup-header" class="btn btn-xl fs-2" data-bs-content="Compétences" href="skills.html">🛠️</a>
-        <a aria-current="page" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-placement="bottom"
-           data-bs-custom-class="popup-header" class="btn btn-xl fs-2" data-bs-content="Diplômes"
-           href="certificates.html">🎓</a>
     </div>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-        crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
-        integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
-        crossorigin="anonymous"></script>
+
+    <!-- Scroll indicator -->
+    <div class="hero__scroll">
+        <svg width="16" height="20" viewBox="0 0 16 20" fill="none">
+            <rect x="1" y="1" width="14" height="18" rx="7" stroke="currentColor" stroke-opacity="0.3" stroke-width="1.5"/>
+            <circle cx="8" cy="6" r="2" fill="currentColor" opacity="0.4">
+                <animateTransform attributeName="transform" type="translate" values="0 0;0 5;0 0" dur="2s" repeatCount="indefinite"/>
+                <animate attributeName="opacity" values="0.4;0.1;0.4" dur="2s" repeatCount="indefinite"/>
+            </circle>
+        </svg>
+    </div>
+</section>
+
+<footer class="pf-footer">
+    <div class="container">© 2025 Augustin d'Erceville · AERCE. Tous droits réservés.</div>
+</footer>
+
 <script>
-    var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
-    var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-        return new bootstrap.Popover(popoverTriggerEl)
-    })
+    // Mobile nav
+    const toggle = document.getElementById('navToggle');
+    const links  = document.getElementById('navLinks');
+    toggle.addEventListener('click', () => links.classList.toggle('open'));
+    document.addEventListener('click', e => {
+        if (!e.target.closest('.pf-nav')) links.classList.remove('open');
+    });
 </script>
 </body>
 </html>

@@ -1,172 +1,420 @@
 <!doctype html>
-<html lang="fr" class="bg-dark">
+<html lang="fr">
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css"/>
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css"/>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
-          rel="stylesheet">
+    <title>Compétences — Augustin d'Erceville</title>
     <link rel="stylesheet" href="styles.css">
-    <title>Portfolio - Compétences</title>
-</head>
-<body style="font-family: 'JetBrains Mono', monospace;" class="bg-dark">
-<header class="navbar bg-dark border-bottom border-body">
-    <div class="container-fluid fs-3">
-        <a class="navbar-brand fs-3 text-light" href="index.html">
-            <img src="Files/Logo.png" alt="Logo" width="48" height="48" class="d-inline-block align-text-center">
-            Compétences
-        </a>
-        <nav>
-            <ul class="nav justify-content-end nav-pills">
-                <li class="nav-item">
-                    <a class="nav-link fw-medium text-light" aria-current="page" href="index.html"
-                       data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-placement="bottom"
-                       data-bs-content="Accueil" data-bs-custom-class="popup-header">🏠</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link fw-light text-body" aria-current="page" href="projects.html" data-bs-toggle="popover"
-                       data-bs-trigger="hover focus" data-bs-placement="bottom" data-bs-content="Mes Projets"
-                       data-bs-custom-class="popup-header">💻</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link fw-light text-body" aria-current="page" href="experience.html"
-                       data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-placement="bottom"
-                       data-bs-content="Expériences professionnelles" data-bs-custom-class="popup-header">📄</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active fw-light text-body" aria-current="page" href="skills.html"
-                       data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-placement="bottom"
-                       data-bs-content="Compétences techniques" data-bs-custom-class="popup-header">🛠️</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link fw-light text-body" aria-current="page" href="certificates.html"
-                       data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-placement="bottom"
-                       data-bs-content="Diplômes et formations" data-bs-custom-class="popup-header">🎓</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link fw-light text-body" aria-current="page" href="contact.html"
-                       data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-placement="bottom"
-                       data-bs-content="Me Contacter" data-bs-custom-class="popup-header">📧</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link fw-light text-body" aria-current="page" href="about.html"
-                       data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-placement="bottom"
-                       data-bs-content="A propos" data-bs-custom-class="popup-header">👤</a>
-                </li>
-            </ul>
-        </nav>
-    </div>
-</header>
-<section class="row m-3">
-    <article class="col bg-dark m-3">
-        <div class="window flex-1 border rounded-lg overflow-hidden bg-gray-800">
-            <div class="window-header flex items-center gap-2 bg-gray-700 text-white px-3 py-1">
-                <span class="w-3 h-3 bg-red-500 rounded-full"></span>
-                <span class="w-3 h-3 bg-yellow-500 rounded-full"></span>
-                <span class="w-3 h-3 bg-green-500 rounded-full"></span>
-                <span class="text-center text-dark text-uppercase bg-light rounded position-relative top-50 start-5 my-1 px-3 w-75">https://portfolio/système</span>
-            </div>
-            <div class="card text-center bg-transparent text-light">
-                <div class="card-header">
-                    Debian
-                </div>
-                <div class="card-header">
-                    Windows
-                </div>
-                <div class="card-header">
-                    Hyper-V
-                </div>
-            </div>
-        </div>
-    </article>
-    <article class="col bg-dark m-3">
-        <div class="window flex-1 border rounded-lg overflow-hidden bg-gray-800">
-            <div class="window-header flex items-center gap-2 bg-gray-700 text-white px-3 py-1">
-                <span class="w-3 h-3 bg-red-500 rounded-full"></span>
-                <span class="w-3 h-3 bg-yellow-500 rounded-full"></span>
-                <span class="w-3 h-3 bg-green-500 rounded-full"></span>
-                <span class="text-center text-dark text-uppercase bg-light rounded position-relative top-50 start-5 my-1 px-3 w-75">https://portfolio/langages</span>
-            </div>
-            <div class="card text-center bg-transparent text-light">
-                <div class="card-header">
-                    HTML, CSS
-                </div>
-                <div class="card-header">
-                    PHP, SQL
-                </div>
-                <div class="card-header">
-                    Java, Python
-                </div>
-            </div>
-        </div>
-    </article>
-    <article class="col bg-dark m-3">
-        <div class="window flex-1 border rounded-lg overflow-hidden bg-gray-800">
-            <div class="window-header flex items-center gap-2 bg-gray-700 text-white px-3 py-1">
-                <span class="w-3 h-3 bg-red-500 rounded-full"></span>
-                <span class="w-3 h-3 bg-yellow-500 rounded-full"></span>
-                <span class="w-3 h-3 bg-green-500 rounded-full"></span>
-                <span class="text-center text-dark text-uppercase bg-light rounded position-relative top-50 start-5 my-1 px-3 w-75">https://portfolio/ide</span>
-            </div>
-            <div class="card text-center bg-transparent text-light">
-                <div class="card-header">
-                    PHPStorm / Bootstrap
-                </div>
-                <div class="card-header">
-                    ItelliJ IDEA
-                </div>
-                <div class="card-header">
-                    PyCharm
-                </div>
-            </div>
-        </div>
-    </article>
-    <article class="col bg-dark m-3">
-        <div class="window flex-1 border rounded-lg overflow-hidden bg-gray-800">
-            <div class="window-header flex items-center gap-2 bg-gray-700 text-white px-3 py-1">
-                <span class="w-3 h-3 bg-red-500 rounded-full"></span>
-                <span class="w-3 h-3 bg-yellow-500 rounded-full"></span>
-                <span class="w-3 h-3 bg-green-500 rounded-full"></span>
-                <span class="text-center text-dark text-uppercase bg-light rounded position-relative top-50 start-5 my-1 px-3 w-75">https://portfolio/autres</span>
-            </div>
-            <div class="card text-center bg-transparent text-light">
-                <div class="card-header">
-                    Microsoft suite office
-                </div>
-                <div class="card-header">
-                    Git, Github
-                </div>
-                <div class="card-header">
-                    Botghost
-                </div>
-            </div>
-        </div>
-    </article>
-</section>
-<footer class="text-center text-gray-400 text-sm py-4 fixed-bottom bg-dark">
-    © 2025 AERCE. Tous droits réservés.
+    <style>
+        /* Skill item with logo */
+        .skill-item {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.6rem 0.75rem;
+            border-radius: var(--radius-sm);
+            background: var(--bg-3);
+            border: 1px solid var(--border);
+            transition: border-color 0.2s, transform 0.2s;
+            cursor: default;
+        }
 
+        .skill-item:hover {
+            border-color: var(--border-2);
+            transform: translateY(-2px);
+        }
+
+        .skill-item__icon {
+            width: 22px; height: 22px;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+
+        .skill-item__name {
+            font-size: 0.845rem;
+            font-weight: 500;
+            color: var(--text);
+        }
+
+        .skill-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        /* Category card */
+        .skill-category {
+            background: var(--bg-2);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            transition: border-color 0.25s;
+        }
+
+        .skill-category:hover { border-color: var(--border-2); }
+
+        .skill-category__header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.5rem;
+            padding-bottom: 0.875rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .skill-category__emoji {
+            font-size: 1.25rem;
+            width: 36px; height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-3);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+        }
+
+        .skill-category__title {
+            font-family: 'Syne', sans-serif;
+            font-size: 0.975rem;
+            font-weight: 700;
+        }
+
+        .skill-category__count {
+            margin-left: auto;
+            font-size: 0.72rem;
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--text-3);
+        }
+
+        /* Level bar */
+        .skill-level {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0.75rem;
+        }
+        .skill-level:last-child { margin-bottom: 0; }
+
+        .skill-level__name {
+            font-size: 0.855rem;
+            color: var(--text-2);
+            min-width: 120px;
+        }
+
+        .skill-level__bar {
+            flex: 1;
+            height: 4px;
+            background: var(--bg-3);
+            border-radius: 2px;
+            margin: 0 1rem;
+            overflow: hidden;
+        }
+
+        .skill-level__fill {
+            height: 100%;
+            background: var(--accent);
+            border-radius: 2px;
+            width: 0;
+            transition: width 1.2s cubic-bezier(.2,.9,.3,1);
+        }
+
+        .skill-level__pct {
+            font-size: 0.72rem;
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--text-3);
+            min-width: 30px;
+            text-align: right;
+        }
+
+        /* Feature card */
+        .feature-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .feature-card {
+            background: var(--bg-2);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.25rem;
+        }
+
+        .feature-card__icon { font-size: 1.6rem; margin-bottom: 0.75rem; }
+        .feature-card__title {
+            font-family: 'Syne', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 0.35rem;
+        }
+        .feature-card__desc { font-size: 0.825rem; color: var(--text-2); line-height: 1.6; }
+
+        @media (max-width: 640px) {
+            .feature-row { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="pf-nav">
+    <a href="index.html" class="pf-nav__brand">
+        <span class="monogram">AE</span>
+        <span>Augustin<span class="pf-nav__sep"> /</span> Portfolio</span>
+    </a>
+    <ul class="pf-nav__links" id="navLinks">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="about.html">À propos</a></li>
+        <li><a href="projects.html">Projets</a></li>
+        <li><a href="experience.html">Expériences</a></li>
+        <li><a href="skills.html" class="active">Compétences</a></li>
+        <li><a href="certificates.html">Diplômes</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="pf-nav__toggle" id="navToggle">☰</button>
+</nav>
+
+<main class="pf-page">
+    <section class="py-section">
+        <div class="container">
+
+            <!-- Header -->
+            <div class="mb-lg reveal">
+                <div class="section-label">Compétences</div>
+                <h1 class="section-title">Outils & technologies</h1>
+                <p class="section-sub">Stack technique acquise en formation BTS SIO SLAM et sur des projets personnels.</p>
+            </div>
+
+            <!-- Levels -->
+            <div class="pf-window reveal reveal-d1 mb-md">
+                <div class="pf-window__bar">
+                    <div class="pf-window__dot pf-window__dot--r"></div>
+                    <div class="pf-window__dot pf-window__dot--y"></div>
+                    <div class="pf-window__dot pf-window__dot--g"></div>
+                    <span class="pf-window__url">portfolio/skill-levels</span>
+                </div>
+                <div class="pf-window__body">
+                    <div class="skill-level">
+                        <span class="skill-level__name">Java / JavaFX</span>
+                        <div class="skill-level__bar"><div class="skill-level__fill" data-width="80"></div></div>
+                        <span class="skill-level__pct">80%</span>
+                    </div>
+                    <div class="skill-level">
+                        <span class="skill-level__name">PHP / SQL</span>
+                        <div class="skill-level__bar"><div class="skill-level__fill" data-width="75"></div></div>
+                        <span class="skill-level__pct">75%</span>
+                    </div>
+                    <div class="skill-level">
+                        <span class="skill-level__name">HTML / CSS</span>
+                        <div class="skill-level__bar"><div class="skill-level__fill" data-width="85"></div></div>
+                        <span class="skill-level__pct">85%</span>
+                    </div>
+                    <div class="skill-level">
+                        <span class="skill-level__name">JavaScript</span>
+                        <div class="skill-level__bar"><div class="skill-level__fill" data-width="60"></div></div>
+                        <span class="skill-level__pct">60%</span>
+                    </div>
+                    <div class="skill-level">
+                        <span class="skill-level__name">Python</span>
+                        <div class="skill-level__bar"><div class="skill-level__fill" data-width="50"></div></div>
+                        <span class="skill-level__pct">50%</span>
+                    </div>
+                    <div class="skill-level">
+                        <span class="skill-level__name">Git / GitHub</span>
+                        <div class="skill-level__bar"><div class="skill-level__fill" data-width="70"></div></div>
+                        <span class="skill-level__pct">70%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Categories grid -->
+            <div class="grid-2 reveal reveal-d2">
+
+                <!-- Systèmes -->
+                <div class="skill-category">
+                    <div class="skill-category__header">
+                        <div class="skill-category__emoji">🖥️</div>
+                        <span class="skill-category__title">Systèmes</span>
+                        <span class="skill-category__count">3 éléments</span>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <img class="skill-item__icon" src="https://img.icons8.com/?size=48&id=17838&format=png" alt="Debian" onerror="this.style.display='none'">
+                            <span class="skill-item__name">Debian Linux</span>
+                        </div>
+                        <div class="skill-item">
+                            <img class="skill-item__icon" src="https://img.icons8.com/?size=48&id=108792&format=png" alt="Windows" onerror="this.style.display='none'">
+                            <span class="skill-item__name">Windows Server</span>
+                        </div>
+                        <div class="skill-item">
+                            <span style="font-size:1.1rem">🔷</span>
+                            <span class="skill-item__name">Hyper-V</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Langages -->
+                <div class="skill-category">
+                    <div class="skill-category__header">
+                        <div class="skill-category__emoji">💻</div>
+                        <span class="skill-category__title">Langages</span>
+                        <span class="skill-category__count">6 éléments</span>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <img class="skill-item__icon" src="https://img.icons8.com/?size=48&id=20909&format=png" alt="HTML" onerror="this.style.display='none'">
+                            <span class="skill-item__name">HTML5</span>
+                        </div>
+                        <div class="skill-item">
+                            <img class="skill-item__icon" src="https://img.icons8.com/?size=48&id=21278&format=png" alt="CSS" onerror="this.style.display='none'">
+                            <span class="skill-item__name">CSS3</span>
+                        </div>
+                        <div class="skill-item">
+                            <img class="skill-item__icon" src="https://img.icons8.com/?size=48&id=13679&format=png" alt="PHP" onerror="this.style.display='none'">
+                            <span class="skill-item__name">PHP</span>
+                        </div>
+                        <div class="skill-item">
+                            <img class="skill-item__icon" src="https://img.icons8.com/?size=48&id=13406&format=png" alt="MySQL" onerror="this.style.display='none'">
+                            <span class="skill-item__name">SQL / MySQL</span>
+                        </div>
+                        <div class="skill-item">
+                            <img class="skill-item__icon" src="https://img.icons8.com/?size=48&id=13679&format=png" alt="Java" onerror="this.style.display='none'">
+                            <span class="skill-item__name">Java</span>
+                        </div>
+                        <div class="skill-item">
+                            <img class="skill-item__icon" src="https://img.icons8.com/?size=48&id=13441&format=png" alt="Python" onerror="this.style.display='none'">
+                            <span class="skill-item__name">Python</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- IDEs & Frameworks -->
+                <div class="skill-category">
+                    <div class="skill-category__header">
+                        <div class="skill-category__emoji">🛠️</div>
+                        <span class="skill-category__title">IDEs & Frameworks</span>
+                        <span class="skill-category__count">5 éléments</span>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span style="font-size:1.1rem">🐘</span>
+                            <span class="skill-item__name">PHPStorm</span>
+                        </div>
+                        <div class="skill-item">
+                            <span style="font-size:1.1rem">☕</span>
+                            <span class="skill-item__name">IntelliJ IDEA</span>
+                        </div>
+                        <div class="skill-item">
+                            <span style="font-size:1.1rem">🐍</span>
+                            <span class="skill-item__name">PyCharm</span>
+                        </div>
+                        <div class="skill-item">
+                            <span style="font-size:1.1rem">🅱️</span>
+                            <span class="skill-item__name">Bootstrap 5</span>
+                        </div>
+                        <div class="skill-item">
+                            <span style="font-size:1.1rem">🖼️</span>
+                            <span class="skill-item__name">JavaFX</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Outils -->
+                <div class="skill-category">
+                    <div class="skill-category__header">
+                        <div class="skill-category__emoji">⚙️</div>
+                        <span class="skill-category__title">Outils & Divers</span>
+                        <span class="skill-category__count">5 éléments</span>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <img class="skill-item__icon" src="https://img.icons8.com/?size=48&id=63777&format=png" alt="GitHub" onerror="this.style.display='none'">
+                            <span class="skill-item__name">Git / GitHub</span>
+                        </div>
+                        <div class="skill-item">
+                            <span style="font-size:1.1rem">📋</span>
+                            <span class="skill-item__name">Suite Microsoft Office</span>
+                        </div>
+                        <div class="skill-item">
+                            <img class="skill-item__icon" src="https://img.icons8.com/?size=48&id=lRyYU5vFuN82&format=png" alt="Discord" onerror="this.style.display='none'">
+                            <span class="skill-item__name">BotGhost / Discord.js</span>
+                        </div>
+                        <div class="skill-item">
+                            <span style="font-size:1.1rem">🗄️</span>
+                            <span class="skill-item__name">MySQL Workbench</span>
+                        </div>
+                        <div class="skill-item">
+                            <span style="font-size:1.1rem">🐋</span>
+                            <span class="skill-item__name">Docker (initiation)</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Feature cards -->
+            <div class="feature-row reveal reveal-d3">
+                <div class="feature-card">
+                    <div class="feature-card__icon">🧩</div>
+                    <div class="feature-card__title">Architecture logicielle</div>
+                    <div class="feature-card__desc">Conception MVC, patterns Repository, séparation des responsabilités et code maintenable.</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-card__icon">🗃️</div>
+                    <div class="feature-card__title">Bases de données</div>
+                    <div class="feature-card__desc">Modélisation relationnelle, requêtes SQL complexes, procédures stockées, JDBC.</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-card__icon">🔐</div>
+                    <div class="feature-card__title">Sécurité web</div>
+                    <div class="feature-card__desc">Gestion des sessions, hachage de mots de passe, prévention XSS et injections SQL.</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-card__icon">🔗</div>
+                    <div class="feature-card__title">Intégration API</div>
+                    <div class="feature-card__desc">Consommation d'API REST (TMDB, Discord), gestion des réponses JSON, fetch et cURL.</div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</main>
+
+<footer class="pf-footer">
+    <div class="container">© 2025 Augustin d'Erceville · AERCE. Tous droits réservés.</div>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-        crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
-        integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
-        crossorigin="anonymous"></script>
 <script>
-    var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
-    var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-        return new bootstrap.Popover(popoverTriggerEl)
-    })
+    // Mobile nav
+    const toggle = document.getElementById('navToggle');
+    const links  = document.getElementById('navLinks');
+    toggle.addEventListener('click', () => links.classList.toggle('open'));
+    document.addEventListener('click', e => {
+        if (!e.target.closest('.pf-nav')) links.classList.remove('open');
+    });
+
+    // Animate skill bars when visible
+    const barObserver = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                e.target.querySelectorAll('.skill-level__fill').forEach(fill => {
+                    fill.style.width = fill.dataset.width + '%';
+                });
+                barObserver.unobserve(e.target);
+            }
+        });
+    }, { threshold: 0.3 });
+
+    const window_ = document.querySelector('.pf-window');
+    if (window_) barObserver.observe(window_);
+
+    // Reveal
+    const observer = new IntersectionObserver(
+        entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+        { threshold: 0.08 }
+    );
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
 </body>
 </html>
